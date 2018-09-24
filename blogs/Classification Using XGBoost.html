@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Classification Using XGBoost</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Fonts-->
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/fontawesome/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/pe-icon/pe-icon.css">
+		<!-- Vendors-->
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/bootstrap/grid.css">
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/magnific-popup/magnific-popup.min.css">
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/swiper/swiper.css">
+		<!-- App & fonts-->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
+		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="../assets/css/main.css"><!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../assets/img/favicon.png">
+
+	</head>
+	
+	<body>
+		<div class="page-wrap" id="root">
+			
+			<!-- header -->
+			<header class="header header--fixed">
+				<div class="header__inner">
+					<div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 180px;"/></a></div>
+					<div class="navbar-toggle" id="fs-button">
+						<div class="navbar-icon"><span></span></div>
+					</div>
+				</div>
+				
+				<!-- fullscreenmenu__module -->
+				<div class="fullscreenmenu__module" trigger="#fs-button">
+					
+					<!-- overlay-menu -->
+					<nav class="overlay-menu">
+						
+						<!-- Navbar -->
+						<ul class="wil-menu-list">
+							<li class="current-menu-item"><a href="../index.html">Home</a>
+							</li>
+							<li><a href="../about.html">About</a>
+							</li>
+							<li><a href="../projects.html">Projects</a>
+							</li>
+							<li><a href="../blog.html">Blog</a>
+							</li>
+							<li><a href="../contact.html">Contact</a>
+							</li>
+						</ul><!-- End Navbar -->
+						
+					</nav><!-- End / overlay-menu -->
+					
+				</div><!-- End / fullscreenmenu__module -->
+				
+			</header><!-- End / header -->
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<span class="post-detail__cat">XGBoost</span>
+							<h2 class="page-title__title">Classification Using XGBoost</h2>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						
+						<!--  -->
+						<div>
+							<div class="post-detail__media"><img src="img/Classification Using XGBoost.jpg" alt=""/></div>
+							<a style="background-color:#333;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@kushagrakevat?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kushagra Kevat"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Picture by Kushagra Kevat</span></a></div>
+							<hr>
+							<div class="post-detail__entry row">
+								<div class="col-md-11">
+									<h5>What exactly is Boosting? How to implement it? Why is XGBoost so powerful?</h5>
+									<p>In this post we&#39;re going to answer these questions by applying XGBoost or eXtreme Gradient Boosting to a dataset. It is an ensemble algorithm that builds several models sequentially, where each subsequent model has lower error rate. XGBoost employs decision trees in its training, but we can also use gradient boosting with other algorithms like logistic regression. It is one of the most popular implementation that works not only with python but also with R, julia and scala.
+									Its mechanism can be broken down from its name itself:</p>
+									<ul>
+									<li><b>Boosting</b>: Each subsequent tree is boosted in performance by correcting error of previous model.</li>
+									<li><b>Gradient</b>: It uses gradient descent algorithm to get the next tree with lower error.</li>
+									<li><b>eXtreme</b>: It is more regularized and computationally powerful than Gradient Boost.</li>
+									</ul><br>
+
+									<p>While AdaBoost, GradientBoost and XGBoost fall under same umbrella of boosting techniques, the subtle differences between them gives the variation in accuracy score. AdaBoost or adaptive boost is an initial implementation of boosting. It lags behind the rest because of its fixed cost function. Whereas Gradient Boost can use different cost functions, which gives it higher flexibility. It uses gradient descent due to which it converges to the optimal tree quickly. XGBoost is a powerful implementation of gradient boost that gives emphasis on regularization to avoid overfitting and computational tricks to speed up training process.</p>
+									<p>Begin by loading the dataset. As it is a toy dataset in sklearn, there is no need to download it as it can be directly accessed from <code>sklearn.datasets</code>. X is the data which will be the input and target is the class we need to predict.</p>
+									<script src="https://gist.github.com/pratyakshajha/f3eaa3cd17cf7c87fb2df87f6c28e902.js"></script>
+
+									<p>Eyeball the data by loading the first 5 rows of data and target features. <code>iris[&#39;DESCR&#39;]</code> loads description of the dataset. It has four attributes(or input variable) and three output classes. </p>
+									<script src="https://gist.github.com/pratyakshajha/1d4c13a02c3299ca638e9a4455a8286a.js"></script>
+
+									<p>Before applying anything, we first need to split into training and test sets. In this step, also prepare test and train set for XGBoost, which takes input in <code>DMatrix</code> format.</p>
+									<script src="https://gist.github.com/pratyakshajha/be68dad7ed6e1b99a5cc6da697f56d2d.js"></script>
+
+									<p>Set the parameters. Most parametrs here are extensively used in many other algorithms and can be chosen intuitively. Parameters like <code>max_depth</code> and <code>eta</code><br>are taken randomly with some educated guessing. It can be further tuned by <code>GridSearchCV</code> or <code>RandomizedSearchCV</code> from sklearn module.</p>
+									<script src="https://gist.github.com/pratyakshajha/59309994b75fc21448823fef416f1849.js"></script>
+
+									<p>With all the prequisites ready, train the classifier. From <code>predict()</code>, it outputs probability of all classes. To find the predicted class, find the class with highest probability from this matrix.</p>
+									<script src="https://gist.github.com/pratyakshajha/4fbd5af83f9880c5e00bf586df275d31.js"></script>
+
+									<p>The final step is to evaluate model. Use <code>accuracy_score</code> to find the performance of the classifier. Any other metric like precision or recall can be used. More on that in another blog post.</p>
+									<script src="https://gist.github.com/pratyakshajha/34c572b364b66374d4936f3394371158.js"></script>
+
+									<p>An opional step can be to save the model. This saved model can be used to serve as a predictor in some real application like an app or a website. Feel free to go through the <a href="https://xgboost.readthedocs.io/en/latest/python/python_intro.html">docs</a> for more in depth material.
+									Through this post, now you can get your own boosted algorithm up and running quickly.</p>
+
+									<p>Accompanying GitHub repository <a href='https://github.com/pratyakshajha/Machine-Learning-Problems/tree/master/Iris%20Dataset'>link</a>.</p>
+										
+								
+								</div>
+							</div>
+							<div class="sharebox__module">
+								<p class="social-text">share this article</p>
+								
+								<!-- social-icon -->
+								<a class="social-icon" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjonsuh.com%2F&title=Jonathan%20Suh&source=https%3A%2F%2Fjonsuh.com%2F&summary=Short%20summary"
+									onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-linkedin"></i>
+								</a><!-- End / social-icon -->
+								
+								
+								<!-- social-icon -->
+								<a class="social-icon" href="https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE" 
+									onclick="window.open(this.href, 'Snopzer',
+								'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" ><i class="social-icon__icon fa fa-facebook"></i>
+								</a><!-- End / social-icon -->
+								
+								
+								<!-- social-icon -->
+								<a class="social-icon" href="https://twitter.com/intent/tweet?text=TWEET_TO_SHARE&url=URL_TO_SHARE&via=USERNAME_TO_SHARE" 
+									onclick="window.open(this.href, 'Snopzer',
+								'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-twitter"></i>
+								</a><!-- End / social-icon -->
+								
+																
+								<!-- social-icon -->
+								<a class="social-icon" href="https://wa.me/?text=urlencodedtext"
+								onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-whatsapp"></i>
+								</a><!-- End / social-icon -->
+
+
+								<!-- social-icon -->
+								<a class="social-icon" href="https://plus.google.com/share?url=https%3A%2F%2Fjonsuh.com%2F"
+									onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-google-plus"></i>
+								</a><!-- End / social-icon -->
+
+
+								<!-- social-icon -->
+								<a class="social-icon" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fjonsuh.com%2F&media=https%3A%2F%2Fjonsuh.com%2Ficon.png&description=Short%20description&hashtags=web,development"
+									onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-pinterest-p"></i>
+								</a><!-- End / social-icon -->								
+																
+							</div>
+						</div><!-- End /  -->
+						
+						<div class="awe-text-center mt-50">
+							<a class="md-btn md-btn--outline-primary " href="../blog.html">See all blogs</a>
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+			<!-- footer -->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-lg-6 ">						
+
+							<p class="footer__links">
+								<a href="../index.html"
+								style="color: #333333;">Home</a> ·
+								<a href="../about.html"
+								style="color: #333333;"> About</a> ·
+								<a href="../projects.html"
+								style="color: #333333;"> Projects</a> · 
+								<a href="../blog.html"
+								style="color: #333333;"> Blog</a> · 
+								<a href="../contact.html"
+								style="color: #333333;"> Contact</a> 
+							</p>
+
+							<p class="footer__coppy">Created with freebie template from <a href="http://awe7.com/">Awe7</a>.</p>
+						</div>
+
+						<div class="col-md-6 col-lg-6 ">
+							<div class="footer__social">
+								
+								<!-- social-icon -->
+								<a class="social-icon" href="https://linkedin.com/in/pratyakshajha/"
+									onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-linkedin"></i>
+								</a><!-- End / social-icon -->
+								
+												
+								<!-- social-icon -->
+								<a class="social-icon" href="https://github.com/pratyakshajha"
+									onclick="window.open(this.href, 'Snopzer','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="social-icon__icon fa fa-github"></i>
+								</a><!-- End / social-icon -->
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- End / footer -->
+			
+		</div>
+		<!-- Vendors-->
+		<script type="text/javascript" src="../assets/vendors/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/swiper/swiper.jquery.js"></script>
+		<script type="text/javascript" src="../assets/vendors/menu/menu.js"></script>
+		<script type="text/javascript" src="../assets/vendors/typed/typed.min.js"></script>
+		<!-- App-->
+		<script type="text/javascript" src="../assets/js/main.js"></script>
+	</body>
+</html>

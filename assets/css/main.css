@@ -60,6 +60,11 @@ img {
     border: 0;
 }
 
+code {
+    font-family: monospace;
+    background-color: #eee;
+}
+
 .page-wrap {
     overflow: hidden;
 }
@@ -70,21 +75,21 @@ img {
     background-size: cover;
     background-position: center center;
     z-index: 9;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 @media (min-width: 320px) {
     .awe-section {
-        padding-top: calc(6.81818vw + 28.18182px);
-        padding-bottom: calc(6.81818vw + 28.18182px);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
 @media (min-width: 1200px) {
     .awe-section {
-        padding-top: 110px;
-        padding-bottom: 110px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -257,29 +262,10 @@ a:focus {
     background-color: #333;
 }
 
-.awe-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-@media (min-width: 320px) {
-    .awe-section {
-        padding-top: calc(4.54545vw + 25.45455px);
-        padding-bottom: calc(4.54545vw + 25.45455px);
-    }
-}
-
-@media (min-width: 1200px) {
-    .awe-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-}
-
 hr {
     margin-top: 10px;
     margin-bottom: 10px;
-    border-color: #ebebeb;
+    border-color: #808080;
 }
 
 .page-wrap {
@@ -701,6 +687,24 @@ mark, .mark {
 
 ul {
     list-style: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding-left: 1em; 
+}
+  
+li::before {
+    content: "\f138  ";
+    font-family: FontAwesome;
+    color: #ff594f;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
     margin: 0;
     padding: 0;
 }
@@ -1973,7 +1977,7 @@ ul {
 --------------------------------------------------------------------------------*/
 
 .page-title {
-    padding: 110px 0 40px 0;
+    padding: 80px 0 40px 0;
 }
 
 .page-title__title {
@@ -2007,7 +2011,7 @@ ul {
     width: 40px;
     height: 3px;
     background-color: #333;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .page-title__social {
@@ -2072,7 +2076,7 @@ ul {
 }
 
 .post-detail__entry {
-    font-size: 14px;
+    font-size: 17px;
     padding: 10px 0 40px;
 }
 
@@ -2109,7 +2113,7 @@ ul {
 }
 
 .post__text {
-    font-size: 14px;
+    font-size: 20px;
     color: #c0c0c0;
     margin-bottom: 20px;
 }
