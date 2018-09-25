@@ -40,6 +40,17 @@
 /* 1. base
 --------------------------------------------------------------------------------*/
 
+.fulloverlay{
+    opacity:0.95;
+    background-color:#333;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:100;
+}
+
 a[disabled], input[disabled], button[disabled], textarea[disabled] {
     cursor: not-allowed !important;
     opacity: .5 !important;
@@ -945,6 +956,10 @@ ol {
     text-transform: uppercase;
     padding: 5px 0;
     transition: all .2s linear;
+}
+
+.overlay-menu li::before {
+    content: "";
 }
 
 @media (min-width: 320px) {
@@ -2113,7 +2128,7 @@ ol {
 }
 
 .post__text {
-    font-size: 20px;
+    font-size: 14px;
     color: #c0c0c0;
     margin-bottom: 20px;
 }
