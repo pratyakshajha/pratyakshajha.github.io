@@ -1,0 +1,4 @@
+# ignore markdowns
+*.md
+# except readme.md which is maintained by hand
+!readme.md
