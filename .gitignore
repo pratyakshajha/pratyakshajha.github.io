@@ -1,4 +1,5 @@
 # ignore markdowns
 *.md
+*blog-detail.html
 # except readme.md which is maintained by hand
 !readme.md
