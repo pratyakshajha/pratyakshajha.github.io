@@ -2073,7 +2073,7 @@ ol {
 .post-detail__meta {
     text-transform: capitalize;
     font-size: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .post-detail__meta .author {
