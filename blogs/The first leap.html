@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Regression with Random Forest</title>
+		<title>The first leap - How I learnt to code</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
@@ -70,9 +70,9 @@
 						
 						<!-- page-title -->
 						<div class="page-title pb-40">
-							<span class="post-detail__cat">Scikit-learn</span>
-							<h2 class="page-title__title">Regression with Random Forest</h2>
-							<div class="post-detail__meta"><span class="date">Dec 26, 2018</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>
+							<span class="post-detail__cat"><usings></span>
+							<h2 class="page-title__title">The first leap - How I learnt to code.</h2>
+							<div class="post-detail__meta"><span class="date">May 18, 2019</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
 						
@@ -87,44 +87,26 @@
 						
 						<!--  -->
 						<div>
-							<div class="post-detail__media"><img src="../assets/img/Regression with Random Forest.jpg" alt=""/></div>
+							<div class="post-detail__media"><img src="../assets/img/blog/the first leap.jpg" alt=""/></div>
 							<a style="background-color:#333;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@geran?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Geran de Klerk"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Picture by Geran de Klerk</span></a>
 							<hr>
 							<div class="post-detail__entry row">
 								<div class="col-md-11">
-									<h5>What exactly is Random Forest? How to implement it?</h5>
-									<p>In this post, we&#39;ll have a look at machine learning process with focus on Random Forest algorithm. Most common ML steps are:</p>
-									<ul>
-									<li>Get the data</li>
-									<li>Analyse the data</li>
-									<li>Transform data</li>
-									<li>Shortlist algorithms</li>
-									<li>Tune algorithm</li>
-									<li>Evaluate</li>
-									</ul></p>
-									<p>In the 4th step, random forest was a clear winner. A little bit on Random Forest first and then we move on to the code.</p>
-									<p>Random forest are one of the most powerful and versatile ML algorithms. It is an ensemble technique i.e. instead of a single regressor, several of them are used. It trains various decision trees on subsets of the training data and then averages out the result of trees for prediction. Instead of putting resources in training a single strong decision tree, a set of decision trees (hence the name <em>forest</em>) which are strong for a small subset of data are trained. An important reason why it works so well is that it can easily map complex relationships between attributes. </p>
-									<p>The image example here shows how it works in case of classification. Difference between classification and regression is the way of selecting the prediction. For example, regression can use mean of all predictions while classification can choose the mode class in all classifiers.</p>
-									<img src="img/rf.gif" alt="Random Forests"></p>
-									<p>The loading part is quite straight forward, by using dataframe from pandas. Eyeball the data to have a quick idea about the data. <code>df.info()</code> gives us information about data types, missing values, column names, etc. <code>df.describe()</code> gives a statistical summary of numerical features.
-									Histograms gives information about distribution of data, any outliers, missing data and abnormal values. 
-									Correlation matrix is important as it helps to determine important features and useless features. Do not forget that </p>
-									<b><p>Correlation does not mean causation.</p></b>
-									<script src="https://gist.github.com/pratyakshajha/3f951d78b995124cb67c9e21d6b3135b.js"></script>
-
-									<p>From correlation values, <code>CHAS</code> and <code>DIS</code> have small correlation with our target feature, so we drop it. After this, split into training and test data.
-									Using <code>StandardScaler</code>, we scale data as these algorithms are pretty sensitive to scaling.</p>
-									<script src="https://gist.github.com/pratyakshajha/eaa38ae44355379de1fd123564ac3e46.js"></script>
-
-									<p>Shortlist several regressors that usually perform well to shortlist the best model. After cross validating each regressor, it outputs a message that gives mean error and standard deviation of error in brackets. </p>
-									<script src="https://gist.github.com/pratyakshajha/8003ecaf4b3b6a9d2d8648fecf3bb1b8.js"></script>
-
-									<p>Notice that random forest and extra trees regressor give almost half the error rate of decision tree. Extra Trees Regressor gives the best performance. Extra Trees Regressor or extremely randomized trees are a modified version of random forest as they are more randomized. Due to high randomisation, they tend to be faster and work well with noisy data. Further tune this algorithm now.</p>
-									<p>For tuning, grid search cross validation and randomized search cross validation are pretty useful. In grid search cross validation, provide a list of values for hyperparameters. It runs cross validation for each and every value. Hence, it is slower. Randomized search cross validation selects any random set of hyperparameters and run cross validation. Both of them fit the regressor to lowest error value, randomized search cross validation is quicker. Since, it is randomized, it can miss some better combinations but most of the times it gives least error. On timing it, randomized search cross validation is more than twice as fast as grid search cross validation with similar error rate.</p>
-									<script src="https://gist.github.com/pratyakshajha/d1cb98cb8d10d4468e2988e59597a26d.js"></script>
-
-									<p>Now, evaluate and save the model. For evaluation, use mean square error. Through this post, now you can get your own random forest algorithm up and running quickly.</p>
-									<p>Accompanying GitHub repository <a href="https://github.com/pratyakshajha/Machine-Learning-Problems">link</a>.</p>
+									<h5>How I learnt to code and my advice for new coders.</h5>
+									<p>
+										Like most engineering students, I started coding in my first year. It was boring, uninteresting and I couldn't make something tangible with my skills. Printing some patterns on the screen didn't take me anywhere.   Although I did well in that subject, the dullness with which it was taught and my own lack of information really slipped the priority of coding to the bottom. 
+									  </p><p>    
+										I cleared another programming subject, but this time I took it upon myself as a challenge to truly understand it. Dealing with technology on a daily basis and this "chatter" about AI piqued my interest. So I started learning, exploring as many things I could. In short, I did a couple of online courses, read some books, attended a few webinars and built several personal projects to reach my current level, where I enjoy coding and also have a decent job offer in my kitty. In this post, I will try to tell you what I did to kickstart my journey. I hope it kickstarts yours.
+									</p><p>
+										Major sources of my learning have been articles, tutorials and how-to spread across the internet. I did several courses on Edx and Courseera. I found that once the fundamentals are built, through online courses and books, navigating through the internet makes it much easier to apply it on real problems. It's the initial kickstart that's hard, once we get in the flow of learning and understanding, it gets much approachable and enjoyable. For learning to code, I recommend Hackerrank, Leetcode, Codechef or any such platform. You can begin with Hackerrank, which has a lot of bite-sized coding challenges based on the topic and level of difficulty. It really reinforces the concepts until you truly understand what you've actually written. Leetcode and Codechef are also good, especially for competitive programming. This comes at a later stage when you're comfortable with your skills.
+									</p><p>    
+										For online courses(a big list of which you can find on my LinkedIn), Edx and Courseera are great. They deeply delve into concepts and is taught by ivy-league professors. The only disadvantage they have is that they can get very theory heavy and hard to digest at times. This is where Udacity excels. The videos are broken into consumable chunks with enough information get you up and running fast. They regularly have scholarship courses, where we can get access to their prime content. I have won their Deep Learning Nanodegree, which is sponsored by Facebook. 
+									</p><p>
+										While learning anything, our spirit is as important as the quality of resource we are using to learn. I often found myself alone in my pursuit, a lot of effort had to be put in to understand and find the right places to learn from.  We are failed by our educational setup. We are taught to simply pass. We study to simply pass. The theory has too much focus, practical applications take the backseat first. This is why I have started an initiative at Ishiine Edretra Venture called Code Canopy. The aim is to give environment for students to learn. Where building skills come first. Understanding comes first. Imagining comes first. And when we truly understand, we enjoy it. It ripples across our whole being. We become more happy, kind and helpful. Things start falling into place. Whether it is implementing that vague idea you had or getting that job you want, or both ;)</p>										
+									</p>
+									<div class="awe-text-center mt-50">
+										<a class="md-btn md-btn--outline-primary " style="background-color: #B0E674; border: #B0E674" href="https://codecanopy.github.io">Visit codecanopy.github.io</a>
+									</div>
 								</div>
 							</div>
 							<div class="sharebox__module">
