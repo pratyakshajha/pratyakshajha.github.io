@@ -255,7 +255,7 @@ a {
 }
 
 a:hover {
-    text-decoration: line-through;
+    text-decoration: overline;
     color: #ff594f;
 }
 
@@ -311,7 +311,7 @@ hr {
 .md-btn:hover {
     background-color: #ebebeb;
     color: #000;
-    text-decoration: line-through;
+    text-decoration: overline;
 }
 
 .md-btn[disabled] {
@@ -402,7 +402,7 @@ hr {
 .md-btn--link:hover {
     background-color: transparent;
     color: #fe6565;
-    text-decoration: underline;
+    text-decoration: overline;
 }
 
 .md-btn--link:focus {
@@ -976,7 +976,7 @@ ol {
 
 .overlay-menu ul li.active > a, .overlay-menu ul li a:hover {
     color: #ff594f;
-    text-decoration: line-through;
+    text-decoration: overline;
 }
 
 .fs-button {
