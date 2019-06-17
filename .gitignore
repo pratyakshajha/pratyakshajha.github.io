@@ -1,5 +1,4 @@
 # ignore markdowns
 *.md
-*blog-detail.html
 # except readme.md 
 !readme.md
