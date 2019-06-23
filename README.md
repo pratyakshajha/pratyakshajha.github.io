@@ -5,7 +5,7 @@ This repository contains the code for a static website hosted through Github pag
 To-Do for the website
 
 | Task                                           | Status |
-|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+|------------------------------------------------|--------|
 | Increase performance on mobile devices |<ul><li>[ ] </li></ul>|
 | Use progressive images |<ul><li>[ ] </li></ul>|
 | Add a comment section  |<ul><li>[ ] </li></ul>|
