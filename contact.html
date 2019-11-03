@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Contact</title>
 		<meta charset="utf-8">
@@ -12,12 +12,20 @@
 		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/grid.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/swiper/swiper.css">
+		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<!-- App & fonts-->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
 		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css"><!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<!--Footer Script-->
+		<script>
+			$(function(){
+			  $("#footer-placeholder").load("footer.html");
+			});
+		</script>
 		
 	</head>
 	
@@ -63,7 +71,7 @@
 			<div class="wil-content">
 				
 				<!-- Section -->
-				<section class="awe-section">
+				<section class="section">
 					<div class="container">
 						
 						<!-- page-title -->
@@ -79,7 +87,7 @@
 				
 				
 				<!-- Section -->
-				<section class="awe-section bg-gray">
+				<section class="section bg-gray">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-4 col-lg-3 ">						
@@ -162,56 +170,12 @@
 			</div>
 			<!-- End / Content-->
 			
-<!-- footer -->
-<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-6 ">						
-
-					<p class="footer__links">
-						<a href="index.html"
-						style="color: #333333;">Home</a> ·
-						<a href="about.html"
-						style="color: #333333;"> About</a> ·
-						<a href="projects.html"
-						style="color: #333333;"> Projects</a> · 
-						<a href="blog.html"
-						style="color: #333333;"> Blog</a> · 
-						<a href="contact.html"
-						style="color: #333333;"> Contact</a> 
-					</p>
-
-					<p class="footer__coppy">Created with freebie template from <a href="http://awe7.com/">Awe7</a>.</p>
-				</div>
-
-				<div class="col-md-6 col-lg-6 ">
-					<div class="footer__social">
-						
-					<!-- social-icon -->
-						<a class="social-icon" href="https://twitter.com/jha_pratyaksha"
-						onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-twitter"></i>
-					</a><!-- End / social-icon -->
-
-					<!-- social-icon -->
-					<a class="social-icon" href="https://linkedin.com/in/pratyakshajha/"
-						onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-linkedin"></i>
-					</a><!-- End / social-icon -->
-					
-									
-					<!-- social-icon -->
-					<a class="social-icon" href="https://github.com/pratyakshajha"
-						onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-github"></i>
-					</a><!-- End / social-icon -->
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- End / footer -->
+		<!-- footer -->
+		<div id="footer-placeholder"></div>
+		<!-- End / footer -->
 			
 		</div>
 		<!-- Vendors-->
-		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.min.js"></script>

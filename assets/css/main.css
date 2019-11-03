@@ -1,12 +1,4 @@
 /*--------------------------------------------------------------------------------
-
-	# Minimis Template 1.0 - Mar 1, 2018
-	# ------------------------------------------------------------------------
-	# Designed & coded by Awe7
-	# Websites:  http://www.awe7.com -  Email: info@awe7.com
-
-----------------------------------------------------------------------------------
-
 	1. base
 	2. button
 	3. form-item
@@ -24,8 +16,8 @@
 	15. socialicon
 	16. title
 	17. typing
-	18. work_detail
-	19. work
+	18. project_detail
+	19. project
 	20. footer
 	21. header-01
 	22. Layout
@@ -80,66 +72,66 @@ code {
     overflow: hidden;
 }
 
-.awe-section {
+.section {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     z-index: 9;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 20px;    
 }
 
 @media (min-width: 320px) {
-    .awe-section {
+    .section {
         padding-top: 10px;
         padding-bottom: 10px;
     }
 }
 
 @media (min-width: 1200px) {
-    .awe-section {
+    .section {
         padding-top: 20px;
         padding-bottom: 20px;
     }
 }
 
-.awe-text-left, .text-left {
+.text-left, .text-left {
     text-align: left !important;
 }
 
-.awe-text-center, .text-center {
+.text-center, .text-center {
     text-align: center !important;
 }
 
-.awe-text-right, .text-right {
+.text-right, .text-right {
     text-align: right !important;
 }
 
-.awe-text-underline {
+.text-underline {
     text-decoration: underline !important;
 }
 
-.awe-round {
+.round {
     border-radius: 5px !important;
 }
 
-.awe-pill {
+.pill {
     border-radius: 50% !important;
 }
 
-.awe-tb {
+.tb {
     display: table;
     width: 100%;
     height: 100%;
 }
 
-.awe-tb__cell {
+.tb__cell {
     display: table-cell;
     vertical-align: middle;
 }
 
-.awe-overlay, [data-gradient-bg] > canvas {
+.overlay, [data-gradient-bg] > canvas {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -148,7 +140,7 @@ code {
     z-index: -1;
 }
 
-.awe-overlay {
+.overlay {
     background-color: rgba(0, 0, 0, .4);
 }
 
@@ -156,7 +148,7 @@ code {
     background-attachment: fixed;
 }
 
-.awe-bg-cover {
+.bg-cover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -255,7 +247,7 @@ a {
 }
 
 a:hover {
-    text-decoration: line-through;
+    text-decoration: overline;
     color: #ff594f;
 }
 
@@ -311,7 +303,7 @@ hr {
 .md-btn:hover {
     background-color: #ebebeb;
     color: #000;
-    text-decoration: line-through;
+    text-decoration: overline;
 }
 
 .md-btn[disabled] {
@@ -402,7 +394,7 @@ hr {
 .md-btn--link:hover {
     background-color: transparent;
     color: #fe6565;
-    text-decoration: underline;
+    text-decoration: overline;
 }
 
 .md-btn--link:focus {
@@ -567,16 +559,16 @@ body {
     color: #555;
 }
 
-body.awe-skin-dark {
+body.skin-dark {
     background-color: #333;
 }
 
-.awe-skin-dark {
+.skin-dark {
     color: rgba(255, 255, 255, .8);
 }
 
-.awe-skin-dark h1, .awe-skin-dark h2, .awe-skin-dark h3, .awe-skin-dark h4,
-.awe-skin-dark h5, .awe-skin-dark h6 {
+.skin-dark h1, .skin-dark h2, .skin-dark h3, .skin-dark h4,
+.skin-dark h5, .skin-dark h6 {
     color: #fff;
 }
 
@@ -976,7 +968,7 @@ ol {
 
 .overlay-menu ul li.active > a, .overlay-menu ul li a:hover {
     color: #ff594f;
-    text-decoration: line-through;
+    text-decoration: overline;
 }
 
 .fs-button {
@@ -1993,6 +1985,7 @@ ol {
 
 .page-title {
     padding: 80px 0 40px 0;
+    text-align: center;
 }
 
 .page-title__title {
@@ -2019,7 +2012,7 @@ ol {
 
 .page-title__text {
     font-size: 16px;
-    color: #a3a3a3;
+    color: #707070;
 }
 
 .page-title__divider {
@@ -2027,6 +2020,7 @@ ol {
     height: 3px;
     background-color: #333;
     margin-top: 10px;
+    margin-left: 50%;
 }
 
 .page-title__social {
@@ -2064,7 +2058,7 @@ ol {
 .post-detail__cat {
     display: inline-block;
     font-family: "Montserrat", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     color: #ff594f;
     margin-bottom: 0;
@@ -2072,11 +2066,11 @@ ol {
 
 .post-detail__meta {
     text-transform: capitalize;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
-.post-detail__meta .author {
+.post-detail__meta .update {
     font-weight: 600;
     color: #c0c0c0;
     margin-left: 5px;
@@ -2091,8 +2085,12 @@ ol {
 }
 
 .post-detail__entry {
-    font-size: 17px;
+    font-size: 18px;
     padding: 10px 0 40px;
+}
+
+.date{
+    color: #ff594f;
 }
 
 /* 13. post
@@ -2128,14 +2126,14 @@ ol {
 }
 
 .post__text {
-    font-size: 14px;
-    color: #c0c0c0;
+    font-size: 16px;
+    color: #575757;
     margin-bottom: 20px;
 }
 
 .post__meta {
     text-transform: capitalize;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -2194,7 +2192,7 @@ ol {
     color: #333;
 }
 
-.awe-skin-dark .progress__wrap {
+.skin-dark .progress__wrap {
     background-color: #666;
 }
 
@@ -2261,10 +2259,10 @@ ol {
     }
 }
 
-/* 18. work_detail
+/* 18. project_detail
 --------------------------------------------------------------------------------*/
 
-.work-detail__title {
+.project-detail__title {
     font-size: 25px;
     line-height: 1;
     text-transform: uppercase;
@@ -2273,18 +2271,18 @@ ol {
 }
 
 @media (min-width: 320px) {
-    .work-detail__title {
+    .project-detail__title {
         font-size: calc(1.70455vw + 19.54545px);
     }
 }
 
 @media (min-width: 1200px) {
-    .work-detail__title {
+    .project-detail__title {
         font-size: 40px;
     }
 }
 
-.work-detail__cat {
+.project-detail__cat {
     display: inline-block;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -2292,53 +2290,53 @@ ol {
     margin-bottom: 5px;
 }
 
-.work-detail__text {
+.project-detail__text {
     font-size: 14px;
     text-transform: capitalize;
     margin-bottom: 30px;
 }
 
-.work-detail__meta {
+.project-detail__meta {
     text-transform: capitalize;
     font-size: 12px;
     margin-bottom: 40px;
 }
 
-.work-detail__meta .author {
+.project-detail__meta .author {
     font-weight: 600;
     color: #c0c0c0;
     margin-left: 5px;
 }
 
-.work-detail__meta .author a:hover {
+.project-detail__meta .author a:hover {
     text-decoration: none;
 }
 
-.work-detail__media {
+.project-detail__media {
     margin-bottom: 30px;
 }
 
-.work-detail__entry {
+.project-detail__entry {
     font-size: 14px;
     padding: 10px 0 40px;
 }
 
-.work-detail__entry .work-img {
+.project-detail__entry .project-img {
     margin-top: 30px;
 }
 
-/* 19. work
+/* 19. project
 --------------------------------------------------------------------------------*/
 
-.work {
+.project {
     position: relative;
 }
 
-.work .hb_back {
+.project .hb_back {
     padding: 20px;
 }
 
-.work__title {
+.project__title {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
@@ -2347,23 +2345,23 @@ ol {
 }
 
 @media (min-width: 320px) {
-    .work__title {
+    .project__title {
         font-size: calc(.45455vw + 16.54545px);
     }
 }
 
 @media (min-width: 1200px) {
-    .work__title {
+    .project__title {
         font-size: 22px;
     }
 }
 
-.work__text {
+.project__text {
     font-size: 14px;
 }
 
 @media (min-width: 993px) {
-    .work .hb_back {
+    .project .hb_back {
         padding: 30px;
     }
 }
@@ -2373,7 +2371,7 @@ ol {
 
 .footer {
     position: relative;
-    padding: 40px 0;
+    padding: 100px 0 40px;
     text-align: center;
 }
 
@@ -2392,6 +2390,7 @@ ol {
 @media (min-width: 993px) {
     .footer {
         text-align: left;
+        padding: 100px 0 40px
     }
 
     .footer__coppy {
@@ -2519,8 +2518,8 @@ ol {
     border-left: 0;
 }
 
-.sidebar-left .form-item--button .awe-btn,
-.sidebar-right .form-item--button .awe-btn {
+.sidebar-left .form-item--button .btn,
+.sidebar-right .form-item--button .btn {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -2833,14 +2832,14 @@ ol {
 }
 
 .sharebox__module {
-    padding: 30px 0;
+    padding: 18px 0;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
-}
+} 
 
 .sharebox__module .social-text {
     font-family: "Montserrat", sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
     color: #333;

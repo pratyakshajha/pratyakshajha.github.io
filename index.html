@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html prefix="og: http://ogp.me/ns#">
+=======
+<html lang="en" prefix="og: http://ogp.me/ns#">
+>>>>>>> optimize
 	<head>
 		<title>Home</title>
 		<meta charset="utf-8">
@@ -12,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/grid.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/swiper/swiper.css">
+		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<!-- App & fonts-->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
 		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css"><!--[if lt IE 9]>
@@ -19,6 +24,23 @@
 		<![endif]-->
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<!--Footer Script-->
+		<script>
+			$(function(){
+			  $("#footer-placeholder").load("footer.html");
+			});
+		</script>
+
+		<!-- Metadata for Social Media-->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Home Page" />
+		<meta property="og:description" content="Pratyaksha's personal website." />
+		<meta property="og:url" content="https://pratyakshajha.github.io" />
+		<meta property="og:image" content="https://pratyakshajha.github.io/assets/img/favicon.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="300" />
+		<meta property="og:image:height" content="300" />
+		<meta name="twitter:card" content="summary_large_image">		
 
 		<!-- Metadata for Social Media-->
 		<meta property="og:type" content="website" />
@@ -75,7 +97,7 @@
 			<div class="wil-content">
 				
 				<!-- Section -->
-				<section class="awe-section">
+				<section class="section">
 					<div class="container">
 						
 						<!-- page-title -->
@@ -84,7 +106,7 @@
 								
 								<!-- typing__module -->
 								<div class="typing__module">
-									<div class="typed-strings"><span>Python.</span><span>Machine Learning.</span><span>Deep Learning.</span>
+									<div class="typed-strings"><span>Data.</span><span>Python.</span><span>Artificial Intelligence.</span>
 									</div><span class="typed"></span>
 								</div><!-- End / typing__module -->
 								
@@ -98,7 +120,7 @@
 				<!-- End / Section -->
 												
 				<!-- Section -->
-				<section class="awe-section bg-gray">
+				<section class="section bg-gray">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6 ">
@@ -119,12 +141,19 @@
 												
 												<!-- post -->
 												<div class="post">
-													<div class="post__media"><a href="blogs/The first leap.html", target="_blank"><img src="assets/img/blog/the first leap.jpg" alt=""/></a></div>
+													<div class="post__media"><a href="blogs/The first leap.html", target="_blank" rel="noopener" rel="noopener"><img src="assets/img/blog/the first leap.jpg" alt=""/></a></div>
 													<div class="post__body">	
+<<<<<<< HEAD
 														<div class="post-detail__meta"><span class="date">May 18, 2019</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>																			
 														<h2 class="post__title"><a href="blogs/The first leap.html", target="_blank">The first leap - How I learnt to code.</a></h2>
 														<p class="post__text">How I learnt to code and my advice for new coders.</p>
 														<a class="md-btn md-btn--outline-primary" href="blogs/The first leap.html", target="_blank">read more
+=======
+														<div class="post-detail__meta"><span class="date">May 18, 2019</span></div>																			
+														<h2 class="post__title"><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank" rel="noopener">The first leap - How I learnt to code.</a></h2>
+														<p class="post__text">How I learnt to code and my advice for new coders.</p>
+														<a class="md-btn md-btn--outline-primary" href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank" rel="noopener">read more
+>>>>>>> optimize
 														</a>
 													</div>
 												</div><!-- End / post -->
@@ -139,12 +168,12 @@
 												
 												<!-- post -->
 												<div class="post">
-													<div class="post__media"><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank"><img src="assets/img/blog/Loss Functions in Pytorch.jpg" alt=""/></a></div>
+													<div class="post__media"><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank" rel="noopener"><img src="assets/img/blog/Loss Functions in Pytorch.jpg" alt=""/></a></div>
 													<div class="post__body">	
-														<div class="post-detail__meta"><span class="date">Jan 6, 2019</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>																			
-														<h2 class="post__title"><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank">A Brief Overview of Loss Functions in Pytorch</a></h2>
-														<p class="post__text">What are loss functions? How do they work? Where to use them?</p>
-														<a class="md-btn md-btn--outline-primary" href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank">read more
+														<div class="post-detail__meta"><span class="date">Jan 6, 2019</span></span></div>																			
+														<h2 class="post__title"><a href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank" rel="noopener">A Brief Overview of Loss Functions in Pytorch</a></h2>
+														<p class="post__text">What are loss functions? How do they project? Where to use them?</p>
+														<a class="md-btn md-btn--outline-primary" href="https://medium.com/udacity-pytorch-challengers/a-brief-overview-of-loss-functions-in-pytorch-c0ddb78068f7", target="_blank" rel="noopener">read more
 														</a>
 													</div>
 												</div><!-- End / post -->
@@ -160,7 +189,7 @@
 													<div class="post">
 														<div class="post__media"><a href="blogs/Classification Using XGBoost.html"><img src="assets/img/blog/Classification Using XGBoost.jpg" alt=""/></a></div>
 														<div class="post__body">
-															<div class="post-detail__meta"><span class="date">Dec 31, 2018</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>																		
+															<div class="post-detail__meta"><span class="date">Dec 31, 2018</span></div>																		
 															<h2 class="post__title"><a href="blogs/Classification Using XGBoost.html">Classification Using XGBoost</a></h2>
 															<p class="post__text">What is XGBoost? What makes it so powerful and popular? This post goes through basics of XGBoost through a simple example.</p>
 															<a class="md-btn md-btn--outline-primary" href="blogs/Classification Using XGBoost.html">read more
@@ -171,30 +200,11 @@
 												</div>
 											</div>
 										</div>
-									
-									<div class="grid-item">
-											<div class="grid-item__inner">
-												<div class="grid-item__content-wrapper">
-													
-													<!-- post -->
-													<div class="post">
-														<div class="post__media"><a href="blogs/Regression by Random Forest.html"><img src="assets/img/blog/Regression with Random Forest.jpg" alt=""/></a></div>
-														<div class="post__body">		
-															<div class="post-detail__meta"><span class="date">Dec 28, 2018</span><span class="author"><a href="../about.html">by Pratyaksha Jha</a></span></div>																		
-															<h2 class="post__title"><a href="blogs/Regression by Random Forest.html">Regression by Random Forest</a></h2>
-															<p class="post__text">One of the powerful algorithms, how does one implement it? </p>
-															<a class="md-btn md-btn--outline-primary" href="Regression by Random Forest.html">read more
-															</a>
-														</div>
-													</div><!-- End / post -->
-													
-												</div>
-											</div>
-										</div>
+																		
 									</div>
 							</div>
 						</div>
-				<!--	<div class="awe-text-center mt-50">
+				<!--	<div class="text-center mt-50">
 							<a class="md-btn md-btn--outline-primary" href="blog.html">All blog posts
 							</a>
 						</div> 
@@ -204,7 +214,7 @@
 					<!-- End / Section -->
 
 					<!-- Section -->
-				<section class="awe-section bg-gray">
+				<section class="section bg-gray">
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-6 ">
@@ -223,8 +233,8 @@
 										<div class="grid-item__inner">
 											<div class="grid-item__content-wrapper">
 												
-												<!-- work -->
-												<div class="work"><a href="projects/dog specie classification.html">
+												<!-- project -->
+												<div class="project"><a href="projects/dog specie classification.html">
 														
 														<!-- hoverbox ef-slide-bottom -->
 														<div class="hoverbox ef-slide-bottom light">
@@ -236,12 +246,12 @@
 															
 															<!-- hb_back -->
 															<div class="hb_back">
-																<h2 class="work__title">Dog Specie Classification using CNN</h2><span class="work__text">...</span>
+																<h2 class="project__title">Dog Specie Classification using CNN</h2><span class="project__text">...</span>
 															</div><!-- End / hb_back -->
 															
 														</div><!-- End / hoverbox ef-slide-bottom -->
 														</a>
-												</div><!-- End / work -->
+												</div><!-- End / project -->
 												
 											</div>
 										</div>
@@ -250,8 +260,8 @@
 										<div class="grid-item__inner">
 											<div class="grid-item__content-wrapper">
 												
-												<!-- work -->
-												<div class="work"><a href="projects/tv script generation.html">
+												<!-- project -->
+												<div class="project"><a href="projects/tv script generation.html">
 														
 														<!-- hoverbox ef-move-top -->
 														<div class="hoverbox ef-move-top light">
@@ -263,12 +273,12 @@
 															
 															<!-- hb_back -->
 															<div class="hb_back">
-																<h2 class="work__title">TV Script Generation using RNN</h2><span class="work__text">...</span>
+																<h2 class="project__title">TV Script Generation using RNN</h2><span class="project__text">...</span>
 															</div><!-- End / hb_back -->
 															
 														</div><!-- End / hoverbox ef-move-top -->
 														</a>
-												</div><!-- End / work -->
+												</div><!-- End / project -->
 												
 											</div>
 										</div>
@@ -277,8 +287,8 @@
 										<div class="grid-item__inner">
 											<div class="grid-item__content-wrapper">
 												
-												<!-- work -->
-												<div class="work"><a href="projects/face generation.html">
+												<!-- project -->
+												<div class="project"><a href="projects/face generation.html">
 														
 														<!-- hoverbox ef-slide-right -->
 														<div class="hoverbox ef-slide-right light">
@@ -290,19 +300,19 @@
 															
 															<!-- hb_back -->
 															<div class="hb_back">
-																<h2 class="work__title">Generating Faces using GAN</h2><span class="work__text">...</span>
+																<h2 class="project__title">Generating Faces using GAN</h2><span class="project__text">...</span>
 															</div><!-- End / hb_back -->
 															
 														</div><!-- End / hoverbox ef-slide-right -->
 														</a>
-												</div><!-- End / work -->
+												</div><!-- End / project -->
 																																												
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-					<!--	<div class="awe-text-center mt-50">
+					<!--	<div class="text-center mt-50">
 								<a class="md-btn md-btn--outline-primary" href="projects.html">All projects
 								</a>
 							</div> 
@@ -310,62 +320,17 @@
 	
 						</div>
 					</section>
-					<!-- End / Section -->
-					
+					<!-- End / Section -->					
 								
 			</div>
 			<!-- End / Content-->
 			
-			<!-- footer -->
-			<div class="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-lg-6 ">						
-	
-								<p class="footer__links">
-									<a href="index.html"
-									style="color: #333333;">Home</a> ·
-									<a href="about.html"
-									style="color: #333333;"> About</a> ·
-									<a href="projects.html"
-									style="color: #333333;"> Projects</a> · 
-									<a href="blog.html"
-									style="color: #333333;"> Blog</a> · 
-									<a href="contact.html"
-									style="color: #333333;"> Contact</a> 
-								</p>
-	
-								<p class="footer__coppy">Created with freebie template from <a href="http://awe7.com/">Awe7</a>.</p>
-							</div>
-	
-							<div class="col-md-6 col-lg-6 ">
-								<div class="footer__social">
-									
-									<!-- social-icon -->
-									<a class="social-icon" href="https://twitter.com/jha_pratyaksha"
-										onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-twitter"></i>
-									</a><!-- End / social-icon -->
-
-									<!-- social-icon -->
-									<a class="social-icon" href="https://linkedin.com/in/pratyakshajha/"
-										onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-linkedin"></i>
-									</a><!-- End / social-icon -->
-									
-													
-									<!-- social-icon -->
-									<a class="social-icon" href="https://github.com/pratyakshajha"
-										onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-github"></i>
-									</a><!-- End / social-icon -->
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- End / footer -->
+		<!-- footer -->
+		<div id="footer-placeholder"></div>
+		<!-- End / footer -->
 			
 		</div>
 		<!-- Vendors-->
-		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.min.js"></script>

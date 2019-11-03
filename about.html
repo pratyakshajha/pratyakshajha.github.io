@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>About</title>
 		<meta charset="utf-8">
@@ -12,14 +12,21 @@
 		<link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/grid.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendors/swiper/swiper.css">
+		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<!-- App & fonts-->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
 		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css"><!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/img/favicon.png">
-
-		<![endif]-->
+		<!--Footer Script-->
+		<script>
+			$(function(){
+			  $("#footer-placeholder").load("footer.html");
+			});
+		</script>
+		
 	</head>
 	
 	<body>
@@ -64,13 +71,13 @@
 			<div class="wil-content">
 				
 				<!-- Section -->
-				<section class="awe-section">
+				<section class="section">
 					<div class="container">
 						
 						<!-- page-title -->
 						<div class="page-title pb-40">
 							<h2 class="page-title__title">About me</h2>
-							<p class="page-title__text">Machine Learning Aficionado. Python coder. Engineer.</p>
+							<p class="page-title__text">Data. Python. Artificial Intelligence.</p>
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
 						
@@ -80,30 +87,38 @@
 				
 				
 				<!-- Section -->
-				<section class="awe-section bg-gray">
+				<section class="section bg-gray">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-6 col-lg-5 "><img src="assets/img/me.jpg" alt="">
+							<div class="col-md-4 col-lg-3"><img src="assets/img/me.jpg" alt="">
 							</div>
 							<div class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
 								
 								<!--  -->
 								<div class="mt-30">
-									<h2 class="about__title">Pratyaksha Jha</h2>
-									<p class="about__subtitle">Pursuing B. E. in Electronics and Communication Engineering</p>
-									<p class="about__text">I am a machine learning aficionado. I help build solutions using ML tools. I am a serial MOOC taker and when I came across a course about machine learning, I absolutely enjoyed it. A few verified courses later, I have not only come to love machine learning but also Python. My skills include machine learning and deep learning. I am well-versed with pandas, numpy, scikit-learn, pytorch and keras packages. 
-											This site helps me to put my various projects and things that I learned available to everyone. Building it was a major task. Not only did I learn HTML and CSS, but I was also able to implement some flask web apps and used Heroku for deployment.
-											Currently, in the Final Year of my B. E. in Electronics and Communications Engineering, my project is on detection of emotion by using DEAP dataset.
-											I also teach Physics and English to High School students and manage some administrative tasks at Ishiine Edretra Venture in Nagpur. 
-											I seek opportunities in data science and allied fields where I can contribute to technological innovation and manage key projects. 
-											In my free time, you can find me watching Netflix or listening to Flume. Want to work together? Want to just talk? I'd love to hear from you.</p>																	
-											
-											<a class="md-btn md-btn--outline-primary" href="Resume - Pratyaksha Jha.pdf" target=_blank>Resume
-											</a>
-
-											<a class="md-btn md-btn--outline-primary" href="contact.html">Contact Me
-											</a>											
-
+									
+									<p class="about__text">
+										<p>
+											My name is Pratyaksha Jha. I'm an analyst at PGS, Pune. I'm also a voracious reader 
+											and an all-round geek.</p>
+										<p>
+											My passion for Python is extended through this blog. 
+											I write about technical themes and my pet projects. 
+											I cover topics related to programming and artificial intelligence. 
+											Sometimes I write on my musings on a book, a TV show or a movie. 
+											This blog is for anyone who is exploring programming or wants to get started.
+										</p>  
+										
+										<p>
+											Feel free to reach out to me.
+										</p>										
+									</p>																																																
+										<a class="md-btn md-btn--outline-primary twitter-dm-button" href="https://twitter.com/messages/compose?recipient_id=1066741132837687297&text=Hi%20there!" data-screen-name="@jha_pratyaksha">Say Hi <i class="social-icon__icon fa fa-twitter"></i>
+										</a>
+										<a class="md-btn md-btn--outline-primary" href="contact.html">Contact Me
+										</a>
+										<a class="md-btn md-btn--outline-primary" href="Resume - Pratyaksha Jha.pdf" target=_blank>Resume
+										</a>											
 								</div><!-- End /  -->
 								
 							</div>
@@ -115,56 +130,12 @@
 			</div>
 			<!-- End / Content-->
 			
-<!-- footer -->
-<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-6 ">						
-
-					<p class="footer__links">
-						<a href="index.html"
-						style="color: #333333;">Home</a> ·
-						<a href="about.html"
-						style="color: #333333;"> About</a> ·
-						<a href="projects.html"
-						style="color: #333333;"> Projects</a> · 
-						<a href="blog.html"
-						style="color: #333333;"> Blog</a> · 
-						<a href="contact.html"
-						style="color: #333333;"> Contact</a> 
-					</p>
-
-					<p class="footer__coppy">Created with freebie template from <a href="http://awe7.com/">Awe7</a>.</p>
-				</div>
-
-				<div class="col-md-6 col-lg-6 ">
-					<div class="footer__social">
-						
-						<!-- social-icon -->
-						<a class="social-icon" href="https://twitter.com/jha_pratyaksha"
-						onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-twitter"></i>
-						</a><!-- End / social-icon -->
-
-						<!-- social-icon -->
-						<a class="social-icon" href="https://linkedin.com/in/pratyakshajha/"
-							onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-linkedin"></i>
-						</a><!-- End / social-icon -->
-						
-										
-						<!-- social-icon -->
-						<a class="social-icon" href="https://github.com/pratyakshajha"
-							onclick="window.open(this.href); return false;"><i class="social-icon__icon fa fa-github"></i>
-						</a><!-- End / social-icon -->
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- End / footer -->
+		<!-- footer -->
+		<div id="footer-placeholder"></div>
+		<!-- End / footer -->
 			
 		</div>
 		<!-- Vendors-->
-		<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
 		<script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
