@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>serverless - Tag - Pratyaksha</title>
+        <link>https://pratyakshajha.me/tags/serverless/</link>
+        <description>serverless - Tag - Pratyaksha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>jhap@rknec.edu (Pratyaksha Jha)</managingEditor>
+            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 02 May 2021 18:50:13 &#43;0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/serverless/" rel="self" type="application/rss+xml" /><item>
+    <title>How to Make a Custom Contact Form for Free</title>
+    <link>https://pratyakshajha.me/how-to-make-a-custom-contact-form-for-free/</link>
+    <pubDate>Sun, 02 May 2021 18:50:13 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>https://pratyakshajha.me/how-to-make-a-custom-contact-form-for-free/</guid>
+    <description><![CDATA[Every website needs a contact form. It is one way for the user to communicate with you directly. This post is about some ways to make a free contact page.
+Warning  This solution is for the case where much traffic is not expected. It can handle at most take 5 form submissions per second.   View: HTML and CSS If you are new to HTML forms and styling, an excellent resource is available on Mozilla web docs.]]></description>
+</item></channel>
+</rss>
