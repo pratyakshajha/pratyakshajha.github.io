@@ -4,12 +4,5 @@
         <link>https://pratyakshajha.me/categories/</link>
         <description>Categories - Category - Pratyaksha</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>jhap@rknec.edu (Pratyaksha Jha)</managingEditor>
-            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 16 Aug 2020 10:33:30 &#43;0530</lastBuildDate><atom:link href="https://pratyakshajha.me/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>Templates</title>
-    <link>https://pratyakshajha.me/categories/templates/</link>
-    <pubDate>Sun, 16 Aug 2020 10:33:30 &#43;0530</pubDate>
-    <author>Author</author>
-    <guid>https://pratyakshajha.me/categories/templates/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><atom:link href="https://pratyakshajha.me/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>

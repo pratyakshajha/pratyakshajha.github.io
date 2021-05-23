@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WIP - Tag - Pratyaksha</title>
+        <link>https://pratyakshajha.me/tags/wip/</link>
+        <description>WIP - Tag - Pratyaksha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>jhap@rknec.edu (Pratyaksha Jha)</managingEditor>
+            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 07 May 2021 03:30:21 &#43;0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/wip/" rel="self" type="application/rss+xml" /><item>
+    <title>Cowin India Vaccine Appointment Availability</title>
+    <link>https://pratyakshajha.me/cowin-india-vaccine-appointment-availability/</link>
+    <pubDate>Fri, 07 May 2021 03:30:21 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>https://pratyakshajha.me/cowin-india-vaccine-appointment-availability/</guid>
+    <description><![CDATA[From May 1st, the government has opened several vaccination centers for people aged between 18 to 45. As the vaccines are scarce and logging in every time to check status is a cumbersome process, I have used open APIs provided by the government to keep track of the availability of vaccines in my home district of Nagpur.
+Warning  This post is a work in progress! A more detailed post coming soon.]]></description>
+</item></channel>
+</rss>
