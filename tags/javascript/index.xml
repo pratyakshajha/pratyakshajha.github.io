@@ -4,13 +4,12 @@
         <link>https://pratyakshajha.me/tags/javascript/</link>
         <description>javascript - Tag - Pratyaksha</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>jhap@rknec.edu (Pratyaksha Jha)</managingEditor>
-            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 07 May 2021 03:30:21 &#43;0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>jhap@rknec.edu (Pratyaksha Jha)</webMaster><lastBuildDate>Sat, 15 May 2021 03:30:21 &#43;0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/javascript/" rel="self" type="application/rss+xml" /><item>
     <title>Covid Vaccine Availability Dashboard</title>
     <link>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</link>
-    <pubDate>Fri, 07 May 2021 03:30:21 &#43;0530</pubDate>
+    <pubDate>Sat, 15 May 2021 03:30:21 &#43;0530</pubDate>
     <author>Author</author>
     <guid>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</guid>
-    <description><![CDATA[From May 1st, the government has opened several vaccination centers for people aged between 18 to 45. As the vaccines are scarce and logging in every time to check status is a cumbersome process, I have used open APIs provided by the government to keep track of the availability of vaccines.
-Warning  This post is a work in progress! A more detailed post coming soon.   Cowin APIs in Python 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35  import requests import json # Appointment availibility by district and date (18+) url = &#34;https://cdn-api.]]></description>
+    <description><![CDATA[From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode.]]></description>
 </item></channel>
 </rss>
