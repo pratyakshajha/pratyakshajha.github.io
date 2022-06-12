@@ -1,355 +1,84 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Covid Vaccine Availability Dashboard - Pratyaksha</title><meta name="Description" content=""><meta property="og:title" content="Covid Vaccine Availability Dashboard" />
-<meta property="og:description" content="From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" />
-<meta property="article:published_time" content="2021-05-15T03:30:21+05:30" />
-<meta property="article:modified_time" content="2021-05-25T02:30:21+05:30" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Covid Vaccine Availability Dashboard"/>
-<meta name="twitter:description" content="From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode."/>
-<meta name="application-name" content="Pratyaksha">
-<meta name="apple-mobile-web-app-title" content="Pratyaksha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" /><link rel="alternate" href="/covid-india-vaccine-appointment-availability/index.xml" type="application/rss+xml" title="Pratyaksha">
-    <link rel="feed" href="/covid-india-vaccine-appointment-availability/index.xml" type="application/rss+xml" title="Pratyaksha"><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Covid Vaccine Availability Dashboard",
-        "inLanguage": "en-us",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/pratyakshajha.me\/covid-india-vaccine-appointment-availability\/"
-        },"genre": "posts","keywords": "javascript, web-development, python, angular","wordcount":  507 ,
-        "url": "https:\/\/pratyakshajha.me\/covid-india-vaccine-appointment-availability\/","datePublished": "2021-05-15T03:30:21+05:30","dateModified": "2021-05-25T02:30:21+05:30","publisher": {
-            "@type": "Organization",
-            "name": ""},"author": {
-                "@type": "Person",
-                "name": "Pratyaksha Jha"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="Pratyaksha">Pratyaksha</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Posts"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/" title="About"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="Pratyaksha">Pratyaksha</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="Posts">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="About">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Covid Vaccine Availability Dashboard</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/about" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Pratyaksha Jha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/projects/"><i class="far fa-folder fa-fw"></i>projects</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-15">2021-05-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;507 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#dashboard-demo">Dashboard Demo</a></li>
-    <li><a href="#cowin-apis">Cowin APIs</a>
-      <ul>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-      </ul>
-    </li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p>From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into <a href="https://www.cowin.gov.in" target="_blank" rel="noopener noreffer">Cowin app</a> to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode.</p>
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>Info<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">It can only view vaccine availability. The actual booking needs to be done by the <a href="https://www.cowin.gov.in" target="_blank" rel="noopener noreffer">Cowin app</a></div>
-        </div>
-    </div>
-<h2 id="dashboard-demo">Dashboard Demo</h2>
-<p>This dashboard is made with <a href="angular.io/" rel="">Angular</a> web framework and <a href="material.angular.io/" rel="">Angular Material</a> for components.</p>
-<p><strong><a href="/projects/covid-vaccine-availability/" rel="">View full page demo</a> |
-<a href="https://github.com/pratyakshajha/covid-vaccine-availability-dashboard" target="_blank" rel="noopener noreffer">View repo on github</a></strong></p>
-<iframe frameborder="0" width="100%" height="800px" src="/projects/covid-vaccine-availability/"></iframe>
-<h2 id="cowin-apis">Cowin APIs</h2>
-<p>The APIs have the general pattern:
-<strong>BASE_URL + PATH + PARAMETERS</strong> <br>
-where BASE_URL is cdn-api.co-vin.in/api/v2/appointment/sessions/public/</p>
-<table>
-<thead>
-<tr>
-<th>PATH</th>
-<th>QUERY PARAMETERS</th>
-<th>EXAMPLE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>findByDistrict</td>
-<td>district_id &amp; date</td>
-<td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&amp;date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&amp;date=25-05-2021" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-<tr>
-<td>findByPin</td>
-<td>pincode &amp; date</td>
-<td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=440010&amp;date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=440010&amp;date=25-05-2021" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-<tr>
-<td>calendarByDistrict</td>
-<td>district_id &amp; date</td>
-<td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=365&amp;date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=365&amp;date=25-05-2021" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-<tr>
-<td>calendarByPin</td>
-<td>pincode &amp; date</td>
-<td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=440010&amp;date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=440010&amp;date=25-05-2021" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-</tbody>
-</table>
-<p>For finding list of states and districts with their ids use BASE_URL as cdn-api.co-vin.in/api/v2/admin/location/</p>
-<table>
-<thead>
-<tr>
-<th>PATH</th>
-<th>PATH PARAMETERS</th>
-<th>EXAMPLE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>states</td>
-<td>None</td>
-<td>cdn-api.co-vin.in/api/v2/admin/location/states <a href="https://cdn-api.co-vin.in/api/v2/admin/location/states" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-<tr>
-<td>districts</td>
-<td>state_id</td>
-<td>cdn-api.co-vin.in/api/v2/admin/location/districts/21 <a href="https://cdn-api.co-vin.in/api/v2/admin/location/districts/21" target="_blank" rel="noopener noreffer"><i class="fas fa-external-link-alt"></i>&nbsp;</a></td>
-</tr>
-</tbody>
-</table>
-<div class="details admonition tip">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">If you get HTTP 403, then add a User-Agent header with value &ldquo;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36&rdquo;</div>
-        </div>
-    </div>
-<p>These APIs can be accessed directly through a browser, REST clients like Postman, or any programming language.</p>
-<h3 id="python">Python</h3>
-<p>Requests is one of the python libraries for making HTTP calls, with steps being as simple as:</p>
-<ol>
-<li>Import library: <code>import requests</code></li>
-<li>Make the GET call <code>response = requests.get(&quot;https://cdn-api.co-vin.in/api/v2/admin/location/states&quot;)</code></li>
-<li>Check the status (200 = successful) <code>print(response.status_code)</code></li>
-<li>Show the response <code>print(response.json())</code></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="c1"># Appointment availibility by district and date (18+)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict&#34;</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;district_id&#34;</span><span class="p">:</span> <span class="s2">&#34;365&#34;</span><span class="p">,</span> <span class="s2">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;25-05-2021&#34;</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;HTTP &#34;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">session</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;sessions&#34;</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;min_age_limit&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># Appointment availibility by district for (18+) for next 7 days</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict&#34;</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;district_id&#34;</span><span class="p">:</span> <span class="s2">&#34;365&#34;</span><span class="p">,</span> <span class="s2">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;25-05-2021&#34;</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;HTTP &#34;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">center</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;centers&#34;</span><span class="p">]:</span>
-    <span class="k">for</span> <span class="n">session</span> <span class="ow">in</span> <span class="n">center</span><span class="p">[</span><span class="s2">&#34;sessions&#34;</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;min_age_limit&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;vaccine&#34;</span><span class="p">]</span><span class="o">==</span><span class="s2">&#34;COVISHIELD&#34;</span> <span class="ow">and</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;available_capacity&#34;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="javascript">JavaScript</h3>
-<p><code>XMLHttpRequest</code> is a built-in object in JavaScript that can make HTTP calls in simple steps:</p>
-<ol>
-<li>Instantiate the object <code>var request = new XMLHttpRequest()</code></li>
-<li>Prepare the GET call <code>request.open('GET', 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&amp;date=25-05-2021')</code></li>
-<li>Define a function to do something when the response is received
-<code>request.onload = function () {            <br>
-console.log(request.status);
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Covid Vaccine Availability Dashboard - Pratyaksha</title><meta name=Description content="This is my cool site"><meta property="og:title" content="Covid Vaccine Availability Dashboard"><meta property="og:description" content="From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode."><meta property="og:type" content="article"><meta property="og:url" content="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-05-15T03:30:21+05:30"><meta property="article:modified_time" content="2021-05-25T02:30:21+05:30"><meta property="og:site_name" content="My cool site"><meta name=twitter:card content="summary"><meta name=twitter:title content="Covid Vaccine Availability Dashboard"><meta name=twitter:description content="From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode."><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/><link rel=alternate href=/covid-india-vaccine-appointment-availability/index.xml type=application/rss+xml title=Pratyaksha><link rel=feed href=/covid-india-vaccine-appointment-availability/index.xml type=application/rss+xml title=Pratyaksha><link rel=stylesheet href=/css/style.min.87bf1911dd101ec4f361dc638848b84bc1cdf6bfede2bce9f7291cbf99fdcc4d.css integrity="sha256-h78ZEd0QHsTzYdxjiEi4S8HN9r/t4rzp9ykcv5n9zE0="><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Covid Vaccine Availability Dashboard","inLanguage":"en-us","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/pratyakshajha.me\/covid-india-vaccine-appointment-availability\/"},"genre":"posts","keywords":"javascript, web-development, python, angular","wordcount":506,"url":"https:\/\/pratyakshajha.me\/covid-india-vaccine-appointment-availability\/","datePublished":"2021-05-15T03:30:21+05:30","dateModified":"2021-05-25T02:30:21+05:30","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Pratyaksha Jha"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Pratyaksha>Pratyaksha</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/ title=About>About </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Pratyaksha>Pratyaksha</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title=About>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Covid Vaccine Availability Dashboard</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/about title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>Pratyaksha Jha</a></span>&nbsp;<span class=post-category>included in <a href=/categories/projects/><i class="far fa-folder fa-fw" aria-hidden=true></i>projects</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2021-05-15>2021-05-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;506 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;3 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#dashboard-demo>Dashboard Demo</a></li><li><a href=#cowin-apis>Cowin APIs</a><ul><li><a href=#python>Python</a></li><li><a href=#javascript>JavaScript</a></li></ul></li><li><a href=#references>References</a></li></ul></nav></div></div><div class=content id=content><p>From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into <a href=https://www.cowin.gov.in target=_blank rel="noopener noreffer">Cowin app</a> to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode.</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw" aria-hidden=true></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden=true></i></div><div class=details-content><div class=admonition-content>It can only view vaccine availability. The actual booking needs to be done by the <a href=https://www.cowin.gov.in target=_blank rel="noopener noreffer">Cowin app</a></div></div></div><h2 id=dashboard-demo>Dashboard Demo</h2><p>This dashboard is made with <a href=angular.io/ rel>Angular</a> web framework and <a href=material.angular.io/ rel>Angular Material</a> for components.</p><p><strong><a href=/projects/covid-vaccine-availability/ rel>View full page demo</a> |
+<a href=https://github.com/pratyakshajha/covid-vaccine-availability-dashboard target=_blank rel="noopener noreffer">View repo on github</a></strong></p><iframe frameborder=0 width=100% height=800px src=/projects/covid-vaccine-availability/></iframe><h2 id=cowin-apis>Cowin APIs</h2><p>The APIs have the general pattern:
+<strong>BASE_URL + PATH + PARAMETERS</strong><br>where BASE_URL is cdn-api.co-vin.in/api/v2/appointment/sessions/public/</p><table><thead><tr><th>PATH</th><th>QUERY PARAMETERS</th><th>EXAMPLE</th></tr></thead><tbody><tr><td>findByDistrict</td><td>district_id & date</td><td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&date=25-05-2021" target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr><tr><td>findByPin</td><td>pincode & date</td><td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=440010&date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=440010&date=25-05-2021" target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr><tr><td>calendarByDistrict</td><td>district_id & date</td><td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=365&date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=365&date=25-05-2021" target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr><tr><td>calendarByPin</td><td>pincode & date</td><td>cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=440010&date=25-05-2021 <a href="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=440010&date=25-05-2021" target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr></tbody></table><p>For finding list of states and districts with their ids use BASE_URL as cdn-api.co-vin.in/api/v2/admin/location/</p><table><thead><tr><th>PATH</th><th>PATH PARAMETERS</th><th>EXAMPLE</th></tr></thead><tbody><tr><td>states</td><td>None</td><td>cdn-api.co-vin.in/api/v2/admin/location/states <a href=https://cdn-api.co-vin.in/api/v2/admin/location/states target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr><tr><td>districts</td><td>state_id</td><td>cdn-api.co-vin.in/api/v2/admin/location/districts/21 <a href=https://cdn-api.co-vin.in/api/v2/admin/location/districts/21 target=_blank rel="noopener noreffer"><i class="fas fa-external-link-alt" aria-hidden=true></i>&nbsp;</a></td></tr></tbody></table><div class="details admonition tip"><div class="details-summary admonition-title"><i class="icon fas fa-lightbulb fa-fw" aria-hidden=true></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden=true></i></div><div class=details-content><div class=admonition-content>If you get HTTP 403, then add a User-Agent header with value &ldquo;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36&rdquo;</div></div></div><p>These APIs can be accessed directly through a browser, REST clients like Postman, or any programming language.</p><h3 id=python>Python</h3><p>Requests is one of the python libraries for making HTTP calls, with steps being as simple as:</p><ol><li>Import library: <code>import requests</code></li><li>Make the GET call <code>response = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/states")</code></li><li>Check the status (200 = successful) <code>print(response.status_code)</code></li><li>Show the response <code>print(response.json())</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>requests</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Appointment availibility by district and date (18+)</span>
+</span></span><span class=line><span class=cl><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>params</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;district_id&#34;</span><span class=p>:</span> <span class=s2>&#34;365&#34;</span><span class=p>,</span> <span class=s2>&#34;date&#34;</span><span class=p>:</span> <span class=s2>&#34;25-05-2021&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>response</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=p>,</span> <span class=n>params</span><span class=o>=</span><span class=n>params</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;HTTP &#34;</span><span class=p>,</span> <span class=n>response</span><span class=o>.</span><span class=n>status_code</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>data</span> <span class=o>=</span> <span class=n>response</span><span class=o>.</span><span class=n>json</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>session</span> <span class=ow>in</span> <span class=n>data</span><span class=p>[</span><span class=s2>&#34;sessions&#34;</span><span class=p>]:</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>session</span><span class=p>[</span><span class=s2>&#34;min_age_limit&#34;</span><span class=p>]</span> <span class=o>==</span> <span class=mi>18</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>session</span><span class=p>,</span> <span class=n>indent</span><span class=o>=</span><span class=mi>2</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Appointment availibility by district for (18+) for next 7 days</span>
+</span></span><span class=line><span class=cl><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>params</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;district_id&#34;</span><span class=p>:</span> <span class=s2>&#34;365&#34;</span><span class=p>,</span> <span class=s2>&#34;date&#34;</span><span class=p>:</span> <span class=s2>&#34;25-05-2021&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>response</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=p>,</span> <span class=n>params</span><span class=o>=</span><span class=n>params</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;HTTP &#34;</span><span class=p>,</span> <span class=n>response</span><span class=o>.</span><span class=n>status_code</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>data</span> <span class=o>=</span> <span class=n>response</span><span class=o>.</span><span class=n>json</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>center</span> <span class=ow>in</span> <span class=n>data</span><span class=p>[</span><span class=s2>&#34;centers&#34;</span><span class=p>]:</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>session</span> <span class=ow>in</span> <span class=n>center</span><span class=p>[</span><span class=s2>&#34;sessions&#34;</span><span class=p>]:</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>session</span><span class=p>[</span><span class=s2>&#34;min_age_limit&#34;</span><span class=p>]</span> <span class=o>==</span> <span class=mi>18</span> <span class=ow>and</span> <span class=n>session</span><span class=p>[</span><span class=s2>&#34;vaccine&#34;</span><span class=p>]</span><span class=o>==</span><span class=s2>&#34;COVISHIELD&#34;</span> <span class=ow>and</span> <span class=n>session</span><span class=p>[</span><span class=s2>&#34;available_capacity&#34;</span><span class=p>]</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>session</span><span class=p>,</span> <span class=n>indent</span><span class=o>=</span><span class=mi>2</span><span class=p>))</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=javascript>JavaScript</h3><p><code>XMLHttpRequest</code> is a built-in object in JavaScript that can make HTTP calls in simple steps:</p><ol><li>Instantiate the object <code>var request = new XMLHttpRequest()</code></li><li>Prepare the GET call <code>request.open('GET', 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&date=25-05-2021')</code></li><li>Define a function to do something when the response is received
+<code>request.onload = function () {<br>console.log(request.status);
 console.log(this.response);
-}</code></li>
-<li>Make the GET call <code>request.send()</code></li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// Appointment availibility by date and district
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>        
-<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&amp;date=25-05-2021&#39;</span><span class="p">);</span>
-
-<span class="nx">request</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>               
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>  
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="references">References</h2>
-<ul>
-<li><a href="https://apisetu.gov.in/public/marketplace/api/cowin" target="_blank" rel="noopener noreffer">Cowin API documentation by GoI</a></li>
-<li><a href="https://docs.python-requests.org/en/master/user/quickstart" target="_blank" rel="noopener noreffer">Making HTTP requests in Python</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener noreffer">Making HTTP requests in JS (or TS)</a></li>
-<li><a href="https://angular.io/docs" target="_blank" rel="noopener noreffer">Getting started with Angular</a></li>
-<li><a href="https://material.angular.io/guide/getting-started" target="_blank" rel="noopener noreffer">Getting started with Angular Material</a></li>
-</ul>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2021-05-25</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-title="Covid Vaccine Availability Dashboard" data-hashtags="javascript,web-development,python,angular"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-hashtag="javascript"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-title="Covid Vaccine Availability Dashboard" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-title="Covid Vaccine Availability Dashboard"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-title="Covid Vaccine Availability Dashboard" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://pratyakshajha.me/covid-india-vaccine-appointment-availability/" data-title="Covid Vaccine Availability Dashboard"><i class="fab fa-evernote fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/web-development/">web-development</a>,&nbsp;<a href="/tags/python/">python</a>,&nbsp;<a href="/tags/angular/">angular</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about" target="_blank">Pratyaksha Jha</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'UA-174965261-1', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-174965261-1" async></script></body>
-</html>
+}</code></li><li>Make the GET call <code>request.send()</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-JavaScript data-lang=JavaScript><span class=line><span class=cl><span class=c1>// Appointment availibility by date and district
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>request</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>XMLHttpRequest</span><span class=p>();</span>        
+</span></span><span class=line><span class=cl><span class=nx>request</span><span class=p>.</span><span class=nx>open</span><span class=p>(</span><span class=s1>&#39;GET&#39;</span><span class=p>,</span> <span class=s1>&#39;https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=365&amp;date=25-05-2021&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>request</span><span class=p>.</span><span class=nx>onload</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>               
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>request</span><span class=p>.</span><span class=nx>status</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>response</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>request</span><span class=p>.</span><span class=nx>send</span><span class=p>()</span>  
+</span></span></code></pre></td></tr></table></div></div><h2 id=references>References</h2><ul><li><a href=https://apisetu.gov.in/public/marketplace/api/cowin target=_blank rel="noopener noreffer">Cowin API documentation by GoI</a></li><li><a href=https://docs.python-requests.org/en/master/user/quickstart target=_blank rel="noopener noreffer">Making HTTP requests in Python</a></li><li><a href=https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest target=_blank rel="noopener noreffer">Making HTTP requests in JS (or TS)</a></li><li><a href=https://angular.io/docs target=_blank rel="noopener noreffer">Getting started with Angular</a></li><li><a href=https://material.angular.io/guide/getting-started target=_blank rel="noopener noreffer">Getting started with Angular Material</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2021-05-25</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard" data-hashtags=javascript,web-development,python,angular><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-hashtag=javascript><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/><i class="fab fa-linkedin fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/><i class="fab fa-reddit fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard" data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://pratyakshajha.me/covid-india-vaccine-appointment-availability/ data-title="Covid Vaccine Availability Dashboard"><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/javascript/>javascript</a>,&nbsp;<a href=/tags/web-development/>web-development</a>,&nbsp;<a href=/tags/python/>python</a>,&nbsp;<a href=/tags/angular/>angular</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><span class=author itemprop=copyrightHolder>&nbsp;<a href=/about target=_blank>Pratyaksha Jha</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by/4.0/ target=_blank>CC BY 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:50},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.2c9c4edf4baacd8662c27bc87684728ee9b820f391fdfb9fac6bdbf4f87a9926.js integrity="sha256-LJxO30uqzYZiwnvIdoRyjum4IPOR/fufrGvb9Ph6mSY="></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-174965261-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-174965261-1" async></script></body></html>
