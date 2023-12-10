@@ -3,75 +3,69 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>replit</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <title>Potential Upside Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <main>
-      <div class="container">
-        <div class="item">
-          <div class="label">Current Price</div>
-          <div class="content">
-            <input
-              id="current-price"
-              type="number"
-              placeholder="Enter Current Price"
-              onchange="calculate()"
-            />
+    <main class="container-fluid">
+      <header>
+        <h1>Potential Upside Calculator</h1>
+      </header>
+
+      <section>
+        <div class="input-container">
+          <div class="item">
+            <div class="label">Current Price</div>
+            <div class="content">
+              <input
+                id="current-price"
+                type="number"
+                placeholder="Enter Current Price"
+                onchange="calculate()"
+              />
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="label">Forecasted Price</div>
+            <div class="content">
+              <input
+                id="forecasted-price"
+                type="number"
+                placeholder="Enter Forecasted Price"
+                onchange="calculate()"
+              />
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="label">Investment Amount</div>
+            <div class="content">
+              <input
+                id="investment-amount"
+                type="number"
+                placeholder="Enter Investment Amount"
+                onchange="calculate()"
+              />
+            </div>
           </div>
         </div>
 
-        <div class="item">
-          <div class="label">Forecasted Price</div>
-          <div class="content">
-            <input
-              id="forecasted-price"
-              type="number"
-              placeholder="Enter Forecasted Price"
-              onchange="calculate()"
-            />
-          </div>
+        <div class="result-container">
+          <strong>Difference: </strong>
+          <span class="result" id="difference"> </span>
+          <strong>Quantity: </strong> <span id="quantity"> </span>
+          <span class="result" id="quantity-approx"> </span>
+          <strong>Profit: </strong> <span id="profit"> </span>
+          <span class="result" id="profit-approx"> </span>
         </div>
-
-        <div class="item">
-          <div class="label">Investment Amount</div>
-          <div class="content">
-            <input
-              id="investment-amount"
-              type="number"
-              placeholder="Enter Investment Amount"
-              onchange="calculate()"
-            />
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="label">Difference</div>
-          <div class="content">
-            <span id="difference">NA</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="label">Quantity</div>
-          <div class="content">
-            <span id="quantity">NA</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="label">Profit</div>
-          <div class="content">
-            <span id="profit">NA</span>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
-
-    <button onclick="calculate()">Calculate</button>
-
     <script src="script.js"></script>
   </body>
 </html>
