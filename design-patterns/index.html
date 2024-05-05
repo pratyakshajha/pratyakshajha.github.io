@@ -1,0 +1,1095 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Design Patterns - Pratyaksha</title><meta name=Description content="This is my cool site"><meta property="og:url" content="https://pratyakshajha.me/design-patterns/">
+<meta property="og:site_name" content="Pratyaksha"><meta property="og:title" content="Design Patterns"><meta property="og:description" content="Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.
+All patterns can be categorized by their intent, or purpose.
+Creational Patterns This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.
+Factory Method This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-05-21T20:43:23+05:30"><meta property="article:modified_time" content="2023-05-21T20:43:23+05:30"><meta property="article:tag" content="Software Engineering"><meta property="article:tag" content="Java"><meta name=twitter:card content="summary"><meta name=twitter:title content="Design Patterns"><meta name=twitter:description content="Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.
+All patterns can be categorized by their intent, or purpose.
+Creational Patterns This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.
+Factory Method This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created."><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://pratyakshajha.me/design-patterns/><link rel=prev href=https://pratyakshajha.me/solid-design-principles/><link rel=next href=https://pratyakshajha.me/potential-upside-calculator/><link rel=alternate href=/design-patterns/index.xml type=application/rss+xml title=Pratyaksha><link rel=feed href=/design-patterns/index.xml type=application/rss+xml title=Pratyaksha><link rel=stylesheet href=/css/style.min.87bf1911dd101ec4f361dc638848b84bc1cdf6bfede2bce9f7291cbf99fdcc4d.css integrity="sha256-h78ZEd0QHsTzYdxjiEi4S8HN9r/t4rzp9ykcv5n9zE0="><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Design Patterns","inLanguage":"en-us","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/pratyakshajha.me\/design-patterns\/"},"genre":"posts","keywords":"software engineering, java","wordcount":2337,"url":"https:\/\/pratyakshajha.me\/design-patterns\/","datePublished":"2023-05-21T20:43:23+05:30","dateModified":"2023-05-21T20:43:23+05:30","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Pratyaksha Jha"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=Pratyaksha>Pratyaksha</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/ title=About>About </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=Pratyaksha>Pratyaksha</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title=About>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Design Patterns</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/about title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>Pratyaksha Jha</a></span>&nbsp;<span class=post-category>included in <a href=/categories/notes/><i class="far fa-folder fa-fw" aria-hidden=true></i>Notes</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-05-21>2023-05-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;2337 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#creational-patterns>Creational Patterns</a><ul><li><a href=#factory-method>Factory Method</a><ul><li><a href=#java>Java</a></li></ul></li><li><a href=#builder>Builder</a><ul><li><a href=#java-1>Java</a></li></ul></li><li><a href=#prototype>Prototype</a><ul><li><a href=#java-2>Java</a></li></ul></li><li><a href=#singleton>Singleton</a><ul><li><a href=#java-3>Java</a></li></ul></li></ul></li><li><a href=#structural-patterns>Structural Patterns</a><ul><li><a href=#facade>Facade</a><ul><li><a href=#java-4>Java</a></li></ul></li><li><a href=#proxy>Proxy</a><ul><li><a href=#java-5>Java</a></li></ul></li></ul></li><li><a href=#behavioral-patterns>Behavioral Patterns</a><ul><li><a href=#iterator>Iterator</a><ul><li><a href=#java-6>Java</a></li></ul></li><li><a href=#observer>Observer</a><ul><li><a href=#java-7>Java</a></li></ul></li><li><a href=#mediator>Mediator</a><ul><li><a href=#java-8>Java</a></li></ul></li><li><a href=#state>State</a><ul><li><a href=#java-9>Java</a></li></ul></li></ul></li><li><a href=#references>References</a></li></ul></nav></div></div><div class=content id=content><p>Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.</p><p>All patterns can be categorized by their intent, or purpose.</p><h2 id=creational-patterns>Creational Patterns</h2><p>This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.</p><h3 id=factory-method>Factory Method</h3><p>This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</p><p>Instead of <code>new</code> keyword, this pattern uses a method to instantiate the object.</p><p>Example: Generate buttons for cross platform apps.</p><h4 id=java>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>ShapeFactory</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=c1>// variables, constructors, etc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>Shape</span><span class=w> </span><span class=nf>createShape</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>type</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>switch</span><span class=p>(</span><span class=n>type</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		  </span><span class=k>case</span><span class=w> </span><span class=s>&#34;CIRCLE&#34;</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		    </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Circle</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		  </span><span class=k>case</span><span class=w> </span><span class=s>&#34;SQUARE&#34;</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		    </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Square</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		  </span><span class=k>default</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		    </span><span class=k>return</span><span class=w> </span><span class=kc>null</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>ShapeFactory</span><span class=w> </span><span class=n>shapeFactory</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ShapeFactory</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Shape</span><span class=w> </span><span class=n>circle</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>shapeFactory</span><span class=p>.</span><span class=na>createShape</span><span class=p>(</span><span class=s>&#34;CIRCLE&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world code examples:</p><p><a href=https://github.com/spring-projects/spring-framework/blob/12b285add3dcdccc340cecdded43e6e6bc71de39/spring-context/src/main/java/org/springframework/format/datetime/standard/DateTimeFormatterFactory.java#L180 target=_blank rel="noopener noreffer">DateTimeFormatterFactory.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/text/NumberFormat.java#L1078 target=_blank rel="noopener noreffer">NumberFormat.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/util/Calendar.java#L1629 target=_blank rel="noopener noreffer">Calendar.java</a></p><h3 id=builder>Builder</h3><p>Create an object step by step using methods, rather than using a construtor. It provides a way of creating complex object in a step by step manner.</p><p>Example: adding parameters for a SQL statement</p><h4 id=java-1>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Employee</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>Integer</span><span class=w> </span><span class=n>id</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>Title</span><span class=w> </span><span class=n>jobTitle</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c1>// other variables, constructors, etc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>Employee</span><span class=w> </span><span class=nf>setId</span><span class=p>(</span><span class=n>Integer</span><span class=w> </span><span class=n>id</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>id</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>id</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>return</span><span class=w> </span><span class=k>this</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>Employee</span><span class=w> </span><span class=nf>setName</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>return</span><span class=w> </span><span class=k>this</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>Employee</span><span class=w> </span><span class=nf>setJobTitle</span><span class=p>(</span><span class=n>Title</span><span class=w> </span><span class=n>jobTitle</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>jobTitle</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>jobTitle</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>return</span><span class=w> </span><span class=k>this</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Employee</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>employee</span><span class=p>.</span><span class=na>setId</span><span class=p>(</span><span class=n>123</span><span class=p>).</span><span class=na>setName</span><span class=p>(</span><span class=s>&#34;John Doe&#34;</span><span class=p>).</span><span class=na>setJobTitle</span><span class=p>(</span><span class=n>Title</span><span class=p>.</span><span class=na>RECEPTIONIST</span><span class=p>)));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world code examples:</p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/lang/StringBuilder.java#L178 target=_blank rel="noopener noreffer">StringBuilder.java</a></p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-jdbc/src/main/java/org/springframework/jdbc/core/namedparam/MapSqlParameterSource.java#L87 target=_blank rel="noopener noreffer">MapSqlParameterSource.java</a></p><h3 id=prototype>Prototype</h3><p>It simply clones an object. Used as a way to give inheritance without the complexity of having many classes inherit from each other.</p><p>Example: Create environment specific confg</p><h4 id=java-2>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>Shape</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>Shape</span><span class=w> </span><span class=nf>clone</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>draw</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Circle</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>Shape</span><span class=p>,</span><span class=w> </span><span class=n>Cloneable</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>radius</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=nf>Circle</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// copy constructor</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=nf>Circle</span><span class=p>(</span><span class=n>Circle</span><span class=w> </span><span class=n>target</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kd>super</span><span class=p>(</span><span class=n>target</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>target</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>this</span><span class=p>.</span><span class=na>radius</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>target</span><span class=p>.</span><span class=na>radius</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>Shape</span><span class=w> </span><span class=nf>clone</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Circle</span><span class=p>(</span><span class=k>this</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>draw</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Drawing a circle.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Circle</span><span class=w> </span><span class=n>circle</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Circle</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>circle</span><span class=p>.</span><span class=na>radius</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>15</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Circle</span><span class=w> </span><span class=n>anotherCircle</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>Circle</span><span class=p>)</span><span class=w> </span><span class=n>circle</span><span class=p>.</span><span class=na>clone</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>A real world code example:</p><p><a href=https://github.com/jenkinsci/jenkins/blob/735c1394699790a3c3814d223140222df2ed95c2/core/src/main/java/hudson/cli/CLICommand.java#L554 target=_blank rel="noopener noreffer">CLICommand.java</a></p><p><a href=https://github.com/jenkinsci/jenkins/blob/735c1394699790a3c3814d223140222df2ed95c2/core/src/main/java/hudson/cli/CLIAction.java#L106 target=_blank rel="noopener noreffer">CLIAction.java</a></p><h3 id=singleton>Singleton</h3><p>It can only be instantiated once.</p><p>Examples: logger, database config, settings, etc</p><h4 id=java-3>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// thread safe</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>final</span><span class=w> </span><span class=kd>class</span> <span class=nc>Singleton</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kd>volatile</span><span class=w> </span><span class=n>Singleton</span><span class=w> </span><span class=n>instance</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>value</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=nf>Singleton</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=n>Singleton</span><span class=w> </span><span class=nf>getInstance</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Singleton</span><span class=w> </span><span class=n>result</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>instance</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>result</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>result</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kd>synchronized</span><span class=p>(</span><span class=n>Singleton</span><span class=p>.</span><span class=na>class</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>instance</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>instance</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Singleton</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>instance</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Singleton</span><span class=w> </span><span class=n>singleton</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Singleton</span><span class=p>.</span><span class=na>getInstance</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world code examples:</p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-jdbc/src/main/java/org/springframework/jdbc/support/SQLErrorCodesFactory.java#L81 target=_blank rel="noopener noreffer">SQLErrorCodesFactory.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/lang/Runtime.java#L135 target=_blank rel="noopener noreffer">Runtime.java</a></p><h2 id=structural-patterns>Structural Patterns</h2><p>This pattern explains how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.</p><h3 id=facade>Facade</h3><p>High level class/method/API to hide complexity in the code base. A facade class contains the low level systems as dependencies which then simplifies their operation.</p><h4 id=java-4>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>AudioFile</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>codecType</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=nf>AudioFile</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=na>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=na>codecType</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>name</span><span class=p>.</span><span class=na>substring</span><span class=p>(</span><span class=n>name</span><span class=p>.</span><span class=na>indexOf</span><span class=p>(</span><span class=s>&#34;.&#34;</span><span class=p>)</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>1</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>getCodecType</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>codecType</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>getName</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>Codec</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>MP3Codec</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>Codec</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>type</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;mp3&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>FlacCodec</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>Codec</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>type</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;flac&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>CodecFactory</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=n>Codec</span><span class=w> </span><span class=nf>extract</span><span class=p>(</span><span class=n>AudioFile</span><span class=w> </span><span class=n>file</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>String</span><span class=w> </span><span class=n>type</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>file</span><span class=p>.</span><span class=na>getCodecType</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>switch</span><span class=p>(</span><span class=n>type</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				  </span><span class=k>case</span><span class=w> </span><span class=s>&#34;mp3&#34;</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				    </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>MP3Codec</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				  </span><span class=k>case</span><span class=w> </span><span class=s>&#34;flac&#34;</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				    </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>FlacCodec</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				  </span><span class=k>default</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				    </span><span class=k>return</span><span class=w> </span><span class=kc>null</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>BitrateReader</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=n>AudioFile</span><span class=w> </span><span class=nf>read</span><span class=p>(</span><span class=n>AudioFile</span><span class=w> </span><span class=n>file</span><span class=p>,</span><span class=w> </span><span class=n>Codec</span><span class=w> </span><span class=n>codec</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;BitrateReader: reading file...&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>file</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=n>AudioFile</span><span class=w> </span><span class=nf>convert</span><span class=p>(</span><span class=n>AudioFile</span><span class=w> </span><span class=n>buffer</span><span class=p>,</span><span class=w> </span><span class=n>Codec</span><span class=w> </span><span class=n>codec</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;BitrateReader: writing file...&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>buffer</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>AudioConversionFacade</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=nf>convertVideo</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>fileName</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>format</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>AudioFile</span><span class=w> </span><span class=n>file</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>AudioFile</span><span class=p>(</span><span class=n>fileName</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Codec</span><span class=w> </span><span class=n>sourceCodec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>CodecFactory</span><span class=p>.</span><span class=na>extract</span><span class=p>(</span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Codec</span><span class=w> </span><span class=n>destinationCodec</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>format</span><span class=p>.</span><span class=na>equals</span><span class=p>(</span><span class=s>&#34;mp3&#34;</span><span class=p>))</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>destinationCodec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>MP3Codec</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>destinationCodec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>FlacCodec</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>AudioFile</span><span class=w> </span><span class=n>buffer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>BitrateReader</span><span class=p>.</span><span class=na>read</span><span class=p>(</span><span class=n>file</span><span class=p>,</span><span class=w> </span><span class=n>sourceCodec</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>AudioFile</span><span class=w> </span><span class=n>result</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>BitrateReader</span><span class=p>.</span><span class=na>convert</span><span class=p>(</span><span class=n>buffer</span><span class=p>,</span><span class=w> </span><span class=n>destinationCodec</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;VideoConversionFacade: conversion completed.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>result</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world code examples:</p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-jdbc/src/main/java/org/springframework/jdbc/core/simple/JdbcClient.java#L70 target=_blank rel="noopener noreffer">JdbcClient.java</a></p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-jdbc/src/main/java/org/springframework/jdbc/core/simple/DefaultJdbcClient.java#L60 target=_blank rel="noopener noreffer">DefaultJdbcClient.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.net.http/share/classes/jdk/internal/net/http/HttpClientFacade.java#L58 target=_blank rel="noopener noreffer">HttpClientFacade.java</a></p><h3 id=proxy>Proxy</h3><p>Basically to substitute an original object with another object.</p><h4 id=java-5>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>CommandExecutor</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>runCommand</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>cmd</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>Exception</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>CommandExecutorImpl</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>CommandExecutor</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>runCommand</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>cmd</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>IOException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>Runtime</span><span class=p>.</span><span class=na>getRuntime</span><span class=p>().</span><span class=na>exec</span><span class=p>(</span><span class=n>cmd</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;&#39;&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>cmd</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34;&#39; command executed.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>CommandExecutorProxy</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>CommandExecutor</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=kt>boolean</span><span class=w> </span><span class=n>isAdmin</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>CommandExecutor</span><span class=w> </span><span class=n>executor</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>CommandExecutorProxy</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>user</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>pwd</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=p>(</span><span class=s>&#34;Admin&#34;</span><span class=p>.</span><span class=na>equals</span><span class=p>(</span><span class=n>user</span><span class=p>)</span><span class=w> </span><span class=o>&amp;&amp;</span><span class=w> </span><span class=s>&#34;@dmin&#34;</span><span class=p>.</span><span class=na>equals</span><span class=p>(</span><span class=n>pwd</span><span class=p>))</span><span class=w> </span><span class=n>isAdmin</span><span class=o>=</span><span class=kc>true</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>executor</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>CommandExecutorImpl</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>runCommand</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>cmd</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>Exception</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=p>(</span><span class=n>isAdmin</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>executor</span><span class=p>.</span><span class=na>runCommand</span><span class=p>(</span><span class=n>cmd</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=k>if</span><span class=p>(</span><span class=n>cmd</span><span class=p>.</span><span class=na>trim</span><span class=p>().</span><span class=na>startsWith</span><span class=p>(</span><span class=s>&#34;rm&#34;</span><span class=p>)){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=k>throw</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Exception</span><span class=p>(</span><span class=s>&#34;rm command is not allowed for non-admin users.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>executor</span><span class=p>.</span><span class=na>runCommand</span><span class=p>(</span><span class=n>cmd</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>CommandExecutor</span><span class=w> </span><span class=n>executor</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>CommandExecutorProxy</span><span class=p>(</span><span class=s>&#34;user&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;user!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>executor</span><span class=p>.</span><span class=na>runCommand</span><span class=p>(</span><span class=s>&#34;ls -ltr&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>executor</span><span class=p>.</span><span class=na>runCommand</span><span class=p>(</span><span class=s>&#34;rm -rf abc.pdf&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world examples:</p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-jms/src/main/java/org/springframework/jms/connection/SessionProxy.java#L31 target=_blank rel="noopener noreffer">SessionProxy.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/b33096f887108c3d7e1f4e62689c2b10401234fa/src/java.base/share/classes/java/util/EventListenerProxy.java#L55 target=_blank rel="noopener noreffer">EventListenerProxy.java</a></p><h2 id=behavioral-patterns>Behavioral Patterns</h2><p>This pattern takes care of effective communication and the assignment of responsibilities between objects.</p><h3 id=iterator>Iterator</h3><p>To iterate over collections in loops.</p><h4 id=java-6>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>enum</span><span class=w> </span><span class=n>Title</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>SOFTWARE_ENGINEER</span><span class=p>,</span><span class=w> </span><span class=n>SENIOR_SOFTWARE_ENGINEER</span><span class=p>,</span><span class=w> </span><span class=n>MANAGER</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Employee</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>Integer</span><span class=w> </span><span class=n>id</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>Title</span><span class=w> </span><span class=n>jobTitle</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>Employee</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>id</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>,</span><span class=w> </span><span class=n>Title</span><span class=w> </span><span class=n>title</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>id</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>id</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>title</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>title</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c1>// other variables, constructors, getter, setter, etc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>EmployeeCollection</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>addEmployee</span><span class=p>(</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>removeEmployee</span><span class=p>(</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>EmployeeIterator</span><span class=w> </span><span class=nf>iterator</span><span class=p>(</span><span class=n>Title</span><span class=w> </span><span class=n>title</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>EmployeeIterator</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>boolean</span><span class=w> </span><span class=nf>hasNext</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>Employee</span><span class=w> </span><span class=nf>next</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>EmployeeCollectionImpl</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>EmployeeCollection</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>List</span><span class=o>&lt;</span><span class=n>Employee</span><span class=o>&gt;</span><span class=w> </span><span class=n>employees</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>EmployeeCollectionImpl</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>employees</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ArrayList</span><span class=o>&lt;&gt;</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>addEmployee</span><span class=p>(</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>employees</span><span class=p>.</span><span class=na>add</span><span class=p>(</span><span class=n>employee</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>removeEmployee</span><span class=p>(</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>employees</span><span class=p>.</span><span class=na>remove</span><span class=p>(</span><span class=n>employee</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>EmployeeIterator</span><span class=w> </span><span class=nf>iterator</span><span class=p>(</span><span class=n>Title</span><span class=w> </span><span class=n>title</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>EmployeeIteratorImpl</span><span class=p>(</span><span class=n>title</span><span class=p>,</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=na>employees</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=kd>class</span> <span class=nc>EmployeeIteratorImpl</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>EmployeeIterator</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>private</span><span class=w> </span><span class=n>Title</span><span class=w> </span><span class=n>title</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>private</span><span class=w> </span><span class=n>List</span><span class=o>&lt;</span><span class=n>Employee</span><span class=o>&gt;</span><span class=w> </span><span class=n>employees</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>private</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>position</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>public</span><span class=w> </span><span class=nf>EmployeeIteratorImpl</span><span class=p>(</span><span class=n>Title</span><span class=w> </span><span class=n>title</span><span class=p>,</span><span class=w> </span><span class=n>List</span><span class=o>&lt;</span><span class=n>Employee</span><span class=o>&gt;</span><span class=w> </span><span class=n>employeeList</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>this</span><span class=p>.</span><span class=na>title</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>title</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>this</span><span class=p>.</span><span class=na>employees</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>employeeList</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>public</span><span class=w> </span><span class=kt>boolean</span><span class=w> </span><span class=nf>hasNext</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>while</span><span class=w> </span><span class=p>(</span><span class=n>position</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>employees</span><span class=p>.</span><span class=na>size</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>employees</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>position</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>employee</span><span class=p>.</span><span class=na>getTitle</span><span class=p>().</span><span class=na>equals</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>title</span><span class=p>)</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=k>return</span><span class=w> </span><span class=kc>true</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=k>else</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=n>position</span><span class=o>++</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>return</span><span class=w> </span><span class=kc>false</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=kd>public</span><span class=w> </span><span class=n>Employee</span><span class=w> </span><span class=nf>next</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>employees</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>position</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>position</span><span class=o>++</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>return</span><span class=w> </span><span class=n>employee</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>EmployeeCollection</span><span class=w> </span><span class=n>employees</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>EmployeeCollectionImple</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>employees</span><span class=p>.</span><span class=na>addEmployee</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>Employee</span><span class=p>(</span><span class=n>1</span><span class=p>,</span><span class=w> </span><span class=s>&#34;John Doe&#34;</span><span class=p>,</span><span class=w> </span><span class=n>Title</span><span class=p>.</span><span class=na>SOFTWARE_ENGINEER</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>employees</span><span class=p>.</span><span class=na>addEmployee</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>Employee</span><span class=p>(</span><span class=n>2</span><span class=p>,</span><span class=w> </span><span class=s>&#34;Jane Doe&#34;</span><span class=p>,</span><span class=w> </span><span class=n>Title</span><span class=p>.</span><span class=na>MANAGER</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>EmployeeIterator</span><span class=w> </span><span class=n>iterator</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>employees</span><span class=p>.</span><span class=na>iterator</span><span class=p>(</span><span class=n>Title</span><span class=p>.</span><span class=na>MANAGER</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>while</span><span class=w> </span><span class=p>(</span><span class=n>iterator</span><span class=p>.</span><span class=na>hasNext</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	    </span><span class=n>Employee</span><span class=w> </span><span class=n>employee</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>iterator</span><span class=p>.</span><span class=na>next</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>employee</span><span class=p>.</span><span class=na>toString</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world examples:</p><p><a href=https://github.com/openjdk/jdk/blob/b33096f887108c3d7e1f4e62689c2b10401234fa/src/java.base/share/classes/java/util/ArrayList.java#L1036 target=_blank rel="noopener noreffer">ArrayList.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/b33096f887108c3d7e1f4e62689c2b10401234fa/src/java.base/share/classes/java/util/HashMap.java#L1582 target=_blank rel="noopener noreffer">HashMap.java</a></p><h3 id=observer>Observer</h3><p>Used by several objects to subscribe to changes to a particular object. (one to many)</p><h4 id=java-7>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>EventManager</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>Map</span><span class=o>&lt;</span><span class=n>String</span><span class=p>,</span><span class=w> </span><span class=n>List</span><span class=o>&lt;</span><span class=n>EventListener</span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>listeners</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>HashMap</span><span class=o>&lt;&gt;</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>EventManager</span><span class=p>(</span><span class=n>String</span><span class=p>...</span><span class=w> </span><span class=n>eventTypes</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=n>eventTypes</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>this</span><span class=p>.</span><span class=na>listeners</span><span class=p>.</span><span class=na>put</span><span class=p>(</span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ArrayList</span><span class=o>&lt;&gt;</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>subscribe</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>EventListener</span><span class=w> </span><span class=n>listener</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>List</span><span class=o>&lt;</span><span class=n>EventListener</span><span class=o>&gt;</span><span class=w> </span><span class=n>users</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>listeners</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>eventType</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>users</span><span class=p>.</span><span class=na>add</span><span class=p>(</span><span class=n>listener</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>unsubscribe</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>EventListener</span><span class=w> </span><span class=n>listener</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>List</span><span class=o>&lt;</span><span class=n>EventListener</span><span class=o>&gt;</span><span class=w> </span><span class=n>users</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>listeners</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>eventType</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>users</span><span class=p>.</span><span class=na>remove</span><span class=p>(</span><span class=n>listener</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>notify</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>file</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>List</span><span class=o>&lt;</span><span class=n>EventListener</span><span class=o>&gt;</span><span class=w> </span><span class=n>users</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>listeners</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>eventType</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=n>EventListener</span><span class=w> </span><span class=n>listener</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=n>users</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>listener</span><span class=p>.</span><span class=na>update</span><span class=p>(</span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>FileEditor</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=n>EventManager</span><span class=w> </span><span class=n>events</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>file</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>FileEditor</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>events</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>EventManager</span><span class=p>(</span><span class=s>&#34;open&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;save&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>openFile</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>filePath</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>file</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>File</span><span class=p>(</span><span class=n>filePath</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>event</span><span class=p>.</span><span class=na>notify</span><span class=p>(</span><span class=s>&#34;open&#34;</span><span class=p>,</span><span class=w> </span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>saveFile</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>file</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>events</span><span class=p>.</span><span class=na>notify</span><span class=p>(</span><span class=s>&#34;save&#34;</span><span class=p>,</span><span class=w> </span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>EventListener</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kt>void</span><span class=w> </span><span class=nf>update</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>file</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>EmailNotificationListener</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>EventListener</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=nf>EmailNotificationListener</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>email</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=na>email</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>email</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>update</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>file</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Email to &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>email</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34;: Someone has performed &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>eventType</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34; operation with the following file: &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>file</span><span class=p>.</span><span class=na>getName</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>LogListener</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>EventListener</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>log</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=nf>LogListener</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>fileName</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=na>log</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>File</span><span class=p>(</span><span class=n>fileName</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>update</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>eventType</span><span class=p>,</span><span class=w> </span><span class=n>File</span><span class=w> </span><span class=n>file</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Save to log &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>log</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34;: Someone has performed &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>eventType</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34; operation with the following file: &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>file</span><span class=p>.</span><span class=na>getName</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Editor</span><span class=w> </span><span class=n>editor</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Editor</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>editor</span><span class=p>.</span><span class=na>events</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;open&#34;</span><span class=p>,</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>LogOpenListener</span><span class=p>(</span><span class=s>&#34;/path/to/log/file.txt&#34;</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>editor</span><span class=p>.</span><span class=na>events</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;save&#34;</span><span class=p>,</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>EmailNotificationListener</span><span class=p>(</span><span class=s>&#34;admin@example.com&#34;</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>editor</span><span class=p>.</span><span class=na>openFile</span><span class=p>(</span><span class=s>&#34;test.txt&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>editor</span><span class=p>.</span><span class=na>saveFile</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world examples:</p><p><a href=https://github.com/jakartaee/servlet/blob/6a414d9fcdd6e10a384e5ca75ace6a8002f52b66/api/src/main/java/jakarta/servlet/http/HttpSessionBindingListener.java#L35 target=_blank rel="noopener noreffer">HttpSessionBindingListener.java</a></p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-web/src/main/java/org/springframework/web/context/request/DestructionCallbackBindingListener.java#L34 target=_blank rel="noopener noreffer">DestructionCallbackBindingListener.java</a></p><h3 id=mediator>Mediator</h3><p>A middle man between two objects/classes. (many to many)</p><p>Example: Air traffic controller that sits between the runways & airplains to provide coordination & communication.</p><h4 id=java-8>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>Mediator</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kt>void</span><span class=w> </span><span class=nf>addUser</span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>user</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kt>void</span><span class=w> </span><span class=nf>sendMessage</span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>user</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>ChatMediator</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>Mediator</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>List</span><span class=o>&lt;</span><span class=n>User</span><span class=o>&gt;</span><span class=w> </span><span class=n>users</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>ChatMediator</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>users</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ArrayList</span><span class=o>&lt;&gt;</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kt>void</span><span class=w> </span><span class=nf>addUser</span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>user</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>users</span><span class=p>.</span><span class=na>add</span><span class=p>(</span><span class=n>user</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kt>void</span><span class=w> </span><span class=nf>sendMessage</span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>sender</span><span class=p>,</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=n>User</span><span class=w> </span><span class=n>user</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=na>users</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>user</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=n>sender</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=n>user</span><span class=p>.</span><span class=na>receive</span><span class=p>(</span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>User</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>setMediator</span><span class=p>(</span><span class=n>Mediator</span><span class=w> </span><span class=n>mediator</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>send</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>receive</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>UserImpl</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>User</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>Mediator</span><span class=w> </span><span class=n>mediator</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>private</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=nf>UserImpl</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>name</span><span class=p>){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>this</span><span class=p>.</span><span class=na>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>name</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>setMediator</span><span class=p>(</span><span class=n>Mediator</span><span class=w> </span><span class=n>mediator</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=k>this</span><span class=p>.</span><span class=na>mediator</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>mediator</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>send</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	  </span><span class=n>mediator</span><span class=p>.</span><span class=na>sendMessage</span><span class=p>(</span><span class=k>this</span><span class=p>,</span><span class=w> </span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>receive</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>message</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	  </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>name</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34; - Received message: &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>User</span><span class=w> </span><span class=n>user1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>UserImpl</span><span class=p>(</span><span class=n>mediator</span><span class=p>,</span><span class=w> </span><span class=s>&#34;John&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>User</span><span class=w> </span><span class=n>user2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>UserImpl</span><span class=p>(</span><span class=n>mediator</span><span class=p>,</span><span class=w> </span><span class=s>&#34;Jane&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>User</span><span class=w> </span><span class=n>user3</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>UserImpl</span><span class=p>(</span><span class=n>mediator</span><span class=p>,</span><span class=w> </span><span class=s>&#34;Jake&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Mediator</span><span class=w> </span><span class=n>mediator</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ChatMediator</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>mediator</span><span class=p>.</span><span class=na>addUser</span><span class=p>(</span><span class=n>user1</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>mediator</span><span class=p>.</span><span class=na>addUser</span><span class=p>(</span><span class=n>user2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>mediator</span><span class=p>.</span><span class=na>addUser</span><span class=p>(</span><span class=n>user3</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>user1</span><span class=p>.</span><span class=na>send</span><span class=p>(</span><span class=s>&#34;Hello!&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world examples:</p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/util/concurrent/ExecutorService.java#L149 target=_blank rel="noopener noreffer">ExecutorService.java</a></p><p><a href=https://github.com/openjdk/jdk/blob/9347bb7df845ee465c378c6f511ef8a6caea18ea/src/java.base/share/classes/java/lang/reflect/Method.java#L558 target=_blank rel="noopener noreffer">Method.java</a></p><h3 id=state>State</h3><p>Where an object behaves differently based on finite number of states.</p><p>Examples: Finite State Machine</p><h4 id=java-9>Java</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Package</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>private</span><span class=w> </span><span class=n>PackageState</span><span class=w> </span><span class=n>state</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>OrderedState</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>previousState</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>state</span><span class=p>.</span><span class=na>prev</span><span class=p>(</span><span class=k>this</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>nextState</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>state</span><span class=p>.</span><span class=na>next</span><span class=p>(</span><span class=k>this</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>printStatus</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>state</span><span class=p>.</span><span class=na>printStatus</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c1>// other variables, constructors, getter, setter, etc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>interface</span> <span class=nc>PackageState</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>prev</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>next</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kt>void</span><span class=w> </span><span class=nf>printStatus</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>OrderedState</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>PackageState</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>prev</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;The package is in its root state.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>next</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>setState</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>ShippedState</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>printStatus</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Package ordered.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>ShippedState</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>PackageState</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>prev</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>setState</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>OrderedState</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>next</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>DeliveredState</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>printStatus</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Package shipped.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>DeliveredState</span><span class=w> </span><span class=kd>implements</span><span class=w> </span><span class=n>PackageState</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>prev</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>setState</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>ShippedState</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>next</span><span class=p>(</span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Package delivered to post office, not received yet.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nd>@Override</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>printStatus</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Package delivered.&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Demo</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=w> </span><span class=n>args</span><span class=o>[]</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Package</span><span class=w> </span><span class=n>pkg</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Package</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>printStatus</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>nextState</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>printStatus</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>nextState</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>pkg</span><span class=p>.</span><span class=na>printStatus</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Real world examples:</p><p><a href=https://github.com/eclipse-ee4j/mojarra/blob/b8a0530af4144c6c15b7010df9e0e50fcc4d90fc/impl/src/main/java/com/sun/faces/lifecycle/LifecycleImpl.java#L115 target=_blank rel="noopener noreffer">LifecycleImpl.java</a></p><p><a href=https://github.com/eclipse-ee4j/mojarra/blob/b8a0530af4144c6c15b7010df9e0e50fcc4d90fc/impl/src/main/java/com/sun/faces/lifecycle/Phase.java#L55 target=_blank rel="noopener noreffer">Phase.java</a></p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java#L222 target=_blank rel="noopener noreffer">PartGenerator.java</a></p><p><a href=https://github.com/spring-projects/spring-framework/blob/bdc4ecd599fd333d310ead2a1cd4bf98bd13963c/spring-web/src/main/java/org/springframework/http/codec/multipart/PartGenerator.java#L65 target=_blank rel="noopener noreffer">PartGenerator.java</a></p><h2 id=references>References</h2><ul><li><a href=https://refactoring.guru/design-patterns target=_blank rel="noopener noreffer">https://refactoring.guru/design-patterns</a></li><li><a href=https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial target=_blank rel="noopener noreffer">https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial</a></li><li><a href=https://www.baeldung.com/tag/design-pattern target=_blank rel="noopener noreffer">https://www.baeldung.com/tag/design-pattern</a></li><li><a href="https://www.youtube.com/watch?v=tv-_1er1mWI" target=_blank rel="noopener noreffer">https://www.youtube.com/watch?v=tv-_1er1mWI</a></li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2023-05-21</span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://pratyakshajha.me/design-patterns/ data-title="Design Patterns" data-hashtags="software engineering,java"><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://pratyakshajha.me/design-patterns/ data-hashtag="software engineering"><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://pratyakshajha.me/design-patterns/><i class="fab fa-linkedin fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://pratyakshajha.me/design-patterns/ data-title="Design Patterns" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://pratyakshajha.me/design-patterns/><i class="fab fa-reddit fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Pocket" data-sharer=pocket data-url=https://pratyakshajha.me/design-patterns/><i class="fab fa-get-pocket fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://pratyakshajha.me/design-patterns/ data-title="Design Patterns" data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://pratyakshajha.me/design-patterns/ data-title="Design Patterns"><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Trello" data-sharer=trello data-url=https://pratyakshajha.me/design-patterns/ data-title="Design Patterns" data-description><i class="fab fa-trello fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/software-engineering/>Software Engineering</a>,&nbsp;<a href=/tags/java/>Java</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/solid-design-principles/ class=prev rel=prev title="Solid Design Principles"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Solid Design Principles</a>
+<a href=/potential-upside-calculator/ class=next rel=next title="Potential Upside Calculator">Potential Upside Calculator<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.125.5">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><span class=author itemprop=copyrightHolder>&nbsp;<a href=/about target=_blank>Pratyaksha Jha</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by/4.0/ target=_blank>CC BY 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery-bundle.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:0},comment:{},lightgallery:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.d7121d72cd85153ec9d35a888cee3eb28c2700ca763f649a538f6c772d750021.js integrity="sha256-1xIdcs2FFT7J01qIjO4+sownAMp2P2SaU49sdy11ACE="></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-174965261-1",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-174965261-1" async></script></body></html>

@@ -1,7 +1,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Aws - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/aws/</link><description>Aws - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 26 Apr 2024 20:59:21 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/aws/" rel="self" type="application/rss+xml"/><item><title>AWS CLI Cheatsheet</title><link>https://pratyakshajha.me/aws-cli-cheatsheet/</link><pubDate>Fri, 26 Apr 2024 20:59:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/aws-cli-cheatsheet/</guid><description><![CDATA[CLI Command Structure:
 aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]
-aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters] (not supported by all)
+aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters] (supported by some commands)
+Info Save output to a file using the &gt; command. For example: aws dynamodb scan --table-name MusicCollection &gt; output.json.
+Tip: Use &gt;&gt; to append to a file. Also useful - Load Parameters from a file
 Set Up Using long-term credentials with IAM user (Not recommended):
-1 aws configure Using short-term credentialswith IAM user:
-1 2 aws configure aws configure set aws_session_token TOKEN # token generated from previous command Using EC2 instance metadata:
-1 2 3 4 aws configure set role_arn arn:aws:iam::123456789012:role/defaultrole aws configure set credential_source Ec2InstanceMetadata aws configure set region us-west-2 aws configure set output json Using IAM role:]]></description></item></channel></rss>
+1 aws configure Using short-term credentialswith IAM user:]]></description></item></channel></rss>
