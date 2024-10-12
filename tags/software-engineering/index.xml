@@ -1,7 +1,17 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Software Engineering - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/software-engineering/</link><description>Software Engineering - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 21 May 2023 20:43:23 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/software-engineering/" rel="self" type="application/rss+xml"/><item><title>Design Patterns</title><link>https://pratyakshajha.me/design-patterns/</link><pubDate>Sun, 21 May 2023 20:43:23 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/design-patterns/</guid><description>Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.
-All patterns can be categorized by their intent, or purpose.
-Creational Patterns This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.
-Factory Method This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</description></item><item><title>Solid Design Principles</title><link>https://pratyakshajha.me/solid-design-principles/</link><pubDate>Sat, 06 May 2023 12:37:56 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/solid-design-principles/</guid><description>SOLID is a set design principles in object-oriented context to make maintainable, testable and extendable software.
-Single Responsibility A class should only have one responsibility. Furthermore, it should only have one reason to change.
-Benefits:
-Testing: A class with one responsibility will have far fewer test cases. Lower coupling: Less functionality in a single class will have fewer dependencies. Organization: Smaller, well-organized classes are easier to search than monolithic ones. Example Bad A class representing a book:</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Software Engineering - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/software-engineering/</link><description>Software Engineering - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 21 May 2023 20:43:23 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/software-engineering/" rel="self" type="application/rss+xml"/><item><title>Design Patterns</title><link>https://pratyakshajha.me/design-patterns/</link><pubDate>Sun, 21 May 2023 20:43:23 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/design-patterns/</guid><description><![CDATA[<p>Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.</p>
+<p>All patterns can be categorized by their intent, or purpose.</p>
+<h2 id="creational-patterns">Creational Patterns</h2>
+<p>This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.</p>
+<h3 id="factory-method">Factory Method</h3>
+<p>This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</p>]]></description></item><item><title>Solid Design Principles</title><link>https://pratyakshajha.me/solid-design-principles/</link><pubDate>Sat, 06 May 2023 12:37:56 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/solid-design-principles/</guid><description><![CDATA[<p>SOLID is a set design principles in object-oriented context to make maintainable, testable and extendable software.</p>
+<h2 id="single-responsibility">Single Responsibility</h2>
+<p>A class should only have one responsibility. Furthermore, it should only have one reason to change.</p>
+<p>Benefits:</p>
+<ul>
+<li>Testing: A class with one responsibility will have far fewer test cases.</li>
+<li>Lower coupling: Less functionality in a single class will have fewer dependencies.</li>
+<li>Organization: Smaller, well-organized classes are easier to search than monolithic ones.</li>
+</ul>
+<h3 id="example">Example</h3>
+<h4 id="bad">Bad</h4>
+<p>A class representing a book:</p>]]></description></item></channel></rss>

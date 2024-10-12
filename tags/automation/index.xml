@@ -1,3 +1,239 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Automation - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/automation/</link><description>Automation - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 24 Apr 2022 15:56:18 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/automation/" rel="self" type="application/rss+xml"/><item><title>Selenium Cheat Sheet</title><link>https://pratyakshajha.me/selenium-cheat-sheet/</link><pubDate>Sun, 24 Apr 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/selenium-cheat-sheet/</guid><description>Info This post assumes prior knowledge of python and selenium 4 Installation Selenium: pip install selenium
-Download the drivers, make sure that your browser, selenium and driver versions are compatible with each other.
-Chrome: https://chromedriver.chromium.org/downloads Firefox: https://github.com/mozilla/geckodriver/releases Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ Instantiate your driver Chrome 1 2 from selenium import webdriver driver = webdriver.Chrome(executable_path=&amp;#34;C:/webdrivers/chromedriver.exe&amp;#34;) With custom options 1 2 3 4 5 6 7 from selenium import webdriver from selenium.webdriver.chrome.options import Options options = Options() ## option to not show an open browser window options.</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Automation - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/automation/</link><description>Automation - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Sun, 24 Apr 2022 15:56:18 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/automation/" rel="self" type="application/rss+xml"/><item><title>Selenium Cheat Sheet</title><link>https://pratyakshajha.me/selenium-cheat-sheet/</link><pubDate>Sun, 24 Apr 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/selenium-cheat-sheet/</guid><description><![CDATA[<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">This post assumes prior knowledge of python and selenium 4</div>
+        </div>
+    </div>
+<h2 id="installation">Installation</h2>
+<p>Selenium: <code>pip install selenium</code></p>
+<p>Download the drivers, make sure that your browser, selenium and driver versions are compatible with each other.</p>
+<ul>
+<li>Chrome: <a href="https://chromedriver.chromium.org/downloads" target="_blank" rel="noopener noreffer">https://chromedriver.chromium.org/downloads</a></li>
+<li>Firefox: <a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener noreffer">https://github.com/mozilla/geckodriver/releases</a></li>
+<li>Edge: <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener noreffer">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a></li>
+</ul>
+<h2 id="instantiate-your-driver">Instantiate your driver</h2>
+<h3 id="chrome">Chrome</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/chromedriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.options</span> <span class="kn">import</span> <span class="n">Options</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## option to not show an open browser window</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&#34;--headless&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/chromedriver.exe&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="mozilla">Mozilla</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/geckodriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options-1">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.options</span> <span class="kn">import</span> <span class="n">Options</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># option for firefox.exe location, if firefox is not installed in default location</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">binary_location</span> <span class="o">=</span> <span class="s2">&#34;C:/.../firefox.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">set_preference</span><span class="p">(</span><span class="s2">&#34;browser.download.manager.showWhenStarting&#34;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">set_preference</span><span class="p">(</span><span class="s2">&#34;browser.download.dir&#34;</span><span class="p">,</span><span class="s2">&#34;/Data&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/geckodriver.exe&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="edge">Edge</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/msedgedriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options-2">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.edge</span> <span class="kn">import</span> <span class="n">service</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">EdgeOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">use_chromium</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&#34;start-maximized&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># option for msegde.exe location, if edge is not installed in default location</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">binary_location</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;C:/../msedge.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">service</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">Service</span><span class="p">(</span><span class="s2">&#34;C:/webdrivers/msedgedriver.exe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">service</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="open-a-website">Open a website</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://google.com&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="find-an-element">Find an element</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&#34;ID&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s2">&#34;NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&#34;XPATH&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">PARTIAL_LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;PARTIAL_TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&#34;TAG_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&#34;CLASS_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">&#34;CSS_SELECTOR&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="find-multiple-elements">Find multiple elements</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&#34;ID&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s2">&#34;NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&#34;XPATH&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">PARTIAL_LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;PARTIAL_TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&#34;TAG_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&#34;CLASS_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">&#34;CSS_SELECTOR&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="get-information-from-element">Get information from element</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">text</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># get an attribute like href, class, value etc</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&#34;ATTRIBUTE&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># get property like text_length</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s2">&#34;PROPERTY&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># is element visible to user</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_displayed</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_enabled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_selected</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s2">&#34;/Screenshots/foo.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="interactions">Interactions</h2>
+<h3 id="button">Button</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">cick</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="text">Text</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&#34;lorem ipsum&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># press arrow key</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&#34;lorem ipsum&#34;</span><span class="p">,</span> <span class="n">Keys</span><span class="o">.</span><span class="n">ARROW_DOWN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>List of all keys is at: <a href="https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank" rel="noopener noreffer">https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys</a></p>]]></description></item></channel></rss>

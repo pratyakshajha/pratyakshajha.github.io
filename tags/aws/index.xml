@@ -1,7 +1,17 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Aws - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/aws/</link><description>Aws - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 26 Apr 2024 20:59:21 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/aws/" rel="self" type="application/rss+xml"/><item><title>AWS CLI Cheatsheet</title><link>https://pratyakshajha.me/aws-cli-cheatsheet/</link><pubDate>Fri, 26 Apr 2024 20:59:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/aws-cli-cheatsheet/</guid><description><![CDATA[CLI Command Structure:
-aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]
-aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters] (supported by some commands)
-Info Save output to a file using the &gt; command. For example: aws dynamodb scan --table-name MusicCollection &gt; output.json.
-Tip: Use &gt;&gt; to append to a file. Also useful - Load Parameters from a file
-Set Up Using long-term credentials with IAM user (Not recommended):
-1 aws configure Using short-term credentialswith IAM user:]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Aws - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/aws/</link><description>Aws - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 26 Apr 2024 20:59:21 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/aws/" rel="self" type="application/rss+xml"/><item><title>AWS CLI Cheatsheet</title><link>https://pratyakshajha.me/aws-cli-cheatsheet/</link><pubDate>Fri, 26 Apr 2024 20:59:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/aws-cli-cheatsheet/</guid><description><![CDATA[<p>CLI Command Structure:</p>
+<p><code>aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]</code></p>
+<p><code>aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters]</code> (supported by some commands)</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Save output to a file using the <code>&gt;</code> command. For example: <code>aws dynamodb scan --table-name MusicCollection &gt; output.json</code>.</p>
+<p>Tip: Use <code>&gt;&gt;</code> to append to a file. Also useful - <a href="#load-parameters-from-a-file" rel="">Load Parameters from a file</a></p>
+</div>
+        </div>
+    </div>
+<h2 id="set-up">Set Up</h2>
+<ul>
+<li>
+<p>Using long-term credentials with IAM user (Not recommended):</p>]]></description></item></channel></rss>

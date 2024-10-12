@@ -1,19 +1,421 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Pratyaksha</title><link>https://pratyakshajha.me/posts/</link><description>All Posts | Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 26 Apr 2024 20:59:21 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/posts/" rel="self" type="application/rss+xml"/><item><title>AWS CLI Cheatsheet</title><link>https://pratyakshajha.me/aws-cli-cheatsheet/</link><pubDate>Fri, 26 Apr 2024 20:59:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/aws-cli-cheatsheet/</guid><description><![CDATA[CLI Command Structure:
-aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]
-aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters] (supported by some commands)
-Info Save output to a file using the &gt; command. For example: aws dynamodb scan --table-name MusicCollection &gt; output.json.
-Tip: Use &gt;&gt; to append to a file. Also useful - Load Parameters from a file
-Set Up Using long-term credentials with IAM user (Not recommended):
-1 aws configure Using short-term credentialswith IAM user:]]></description></item><item><title>SQL Cheatsheet</title><link>https://pratyakshajha.me/sql-cheatsheet/</link><pubDate>Mon, 05 Feb 2024 09:27:48 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/sql-cheatsheet/</guid><description><![CDATA[Single line comment: -- comment
-Multiline comment: /* comments */
-Data query Language (DQL) 1 2 3 4 5 6 7 SELECT &#39;ID: &#39;, id, col_1 + col_2, sqrt(col_2) FROM t1 -- precedence within WHERE: functions, comparisons, NOT, AND, OR WHERE col_1 &gt; 100 AND NOT MOD(col_2, 10) = 0 OR col_3 &lt; col_1 ORDER BY col_4 DESC, col_5; 1 2 -- number of rows, number of not-null-values SELECT COUNT(*), COUNT(col_1) FROM t1; 1 2 -- predefined functions SELECT COUNT(col_1), MAX(col_1), MIN(col_1), AVG(col_1), SUM(col_1) FROM t1; 1 2 -- UNIQUE values only SELECT DISTINCT col_1 FROM t1; 1 2 -- Only the combination of col_1 plus col_2 is unique SELECT DISTINCT col_1, col_2 FROM t1; Case Expression 1 2 3 4 5 6 7 8 SELECT id, CASE contact_type WHEN &#39;fixed line&#39; THEN &#39;Phone&#39; WHEN &#39;mobile&#39; THEN &#39;Phone&#39; ELSE &#39;Not a telephone number&#39; END AS &#39;contact_type&#39;, contact_value FROM contact; There are two short forms for special CASE expressions: COALESCE and NULLIF.]]></description></item><item><title>Potential Upside Calculator</title><link>https://pratyakshajha.me/potential-upside-calculator/</link><pubDate>Sat, 09 Dec 2023 11:56:02 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/potential-upside-calculator/</guid><description>View full page demo</description></item><item><title>Design Patterns</title><link>https://pratyakshajha.me/design-patterns/</link><pubDate>Sun, 21 May 2023 20:43:23 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/design-patterns/</guid><description>Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.
-All patterns can be categorized by their intent, or purpose.
-Creational Patterns This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.
-Factory Method This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</description></item><item><title>Solid Design Principles</title><link>https://pratyakshajha.me/solid-design-principles/</link><pubDate>Sat, 06 May 2023 12:37:56 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/solid-design-principles/</guid><description>SOLID is a set design principles in object-oriented context to make maintainable, testable and extendable software.
-Single Responsibility A class should only have one responsibility. Furthermore, it should only have one reason to change.
-Benefits:
-Testing: A class with one responsibility will have far fewer test cases. Lower coupling: Less functionality in a single class will have fewer dependencies. Organization: Smaller, well-organized classes are easier to search than monolithic ones. Example Bad A class representing a book:</description></item><item><title>Selenium Cheat Sheet</title><link>https://pratyakshajha.me/selenium-cheat-sheet/</link><pubDate>Sun, 24 Apr 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/selenium-cheat-sheet/</guid><description>Info This post assumes prior knowledge of python and selenium 4 Installation Selenium: pip install selenium
-Download the drivers, make sure that your browser, selenium and driver versions are compatible with each other.
-Chrome: https://chromedriver.chromium.org/downloads Firefox: https://github.com/mozilla/geckodriver/releases Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ Instantiate your driver Chrome 1 2 from selenium import webdriver driver = webdriver.Chrome(executable_path=&amp;#34;C:/webdrivers/chromedriver.exe&amp;#34;) With custom options 1 2 3 4 5 6 7 from selenium import webdriver from selenium.webdriver.chrome.options import Options options = Options() ## option to not show an open browser window options.</description></item><item><title>Git Cheat Sheet</title><link>https://pratyakshajha.me/git-cheat-sheet/</link><pubDate>Wed, 12 Jan 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/git-cheat-sheet/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Pratyaksha</title><link>https://pratyakshajha.me/posts/</link><description>All Posts | Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Fri, 26 Apr 2024 20:59:21 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/posts/" rel="self" type="application/rss+xml"/><item><title>AWS CLI Cheatsheet</title><link>https://pratyakshajha.me/aws-cli-cheatsheet/</link><pubDate>Fri, 26 Apr 2024 20:59:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/aws-cli-cheatsheet/</guid><description><![CDATA[<p>CLI Command Structure:</p>
+<p><code>aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]</code></p>
+<p><code>aws &lt;command&gt; wait &lt;subcommand&gt; [options and parameters]</code> (supported by some commands)</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Save output to a file using the <code>&gt;</code> command. For example: <code>aws dynamodb scan --table-name MusicCollection &gt; output.json</code>.</p>
+<p>Tip: Use <code>&gt;&gt;</code> to append to a file. Also useful - <a href="#load-parameters-from-a-file" rel="">Load Parameters from a file</a></p>
+</div>
+        </div>
+    </div>
+<h2 id="set-up">Set Up</h2>
+<ul>
+<li>
+<p>Using long-term credentials with IAM user (Not recommended):</p>]]></description></item><item><title>SQL Cheatsheet</title><link>https://pratyakshajha.me/sql-cheatsheet/</link><pubDate>Mon, 05 Feb 2024 09:27:48 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/sql-cheatsheet/</guid><description><![CDATA[<p>Single line comment: <code>-- comment</code></p>
+<p>Multiline comment: <code>/* comments */</code></p>
+<h2 id="data-query-language-dql">Data query Language (DQL)</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;ID: &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">col_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">col_2</span><span class="p">,</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">col_2</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">   </span><span class="n">t1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- precedence within WHERE: functions, comparisons, NOT, AND, OR
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">WHERE</span><span class="w">  </span><span class="n">col_1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">AND</span><span class="w">    </span><span class="k">NOT</span><span class="w"> </span><span class="k">MOD</span><span class="p">(</span><span class="n">col_2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">OR</span><span class="w">     </span><span class="n">col_3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">col_1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w">  </span><span class="k">BY</span><span class="w"> </span><span class="n">col_4</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">col_5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- number of rows, number of not-null-values
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">col_1</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- predefined functions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">col_1</span><span class="p">),</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">col_1</span><span class="p">),</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">col_1</span><span class="p">),</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">col_1</span><span class="p">),</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">col_1</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- UNIQUE values only
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">col_1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- Only the combination of col_1 plus col_2 is unique
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">col_1</span><span class="p">,</span><span class="w"> </span><span class="n">col_2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="case-expression">Case Expression</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">CASE</span><span class="w"> </span><span class="n">contact_type</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;fixed line&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Phone&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">WHEN</span><span class="w"> </span><span class="s1">&#39;mobile&#39;</span><span class="w">     </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Phone&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="k">ELSE</span><span class="w">                   </span><span class="s1">&#39;Not a telephone number&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;contact_type&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">contact_value</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w">   </span><span class="n">contact</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>There are two short forms for special <code>CASE</code> expressions: <code>COALESCE</code> and <code>NULLIF</code>.</p>]]></description></item><item><title>Potential Upside Calculator</title><link>https://pratyakshajha.me/potential-upside-calculator/</link><pubDate>Sat, 09 Dec 2023 11:56:02 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/potential-upside-calculator/</guid><description><![CDATA[<p><strong><a href="/projects/potential-upside-calculator/" rel="">View full page demo</a></strong></p>
+<iframe frameborder="0" width="100%" height="800px" src="/projects/potential-upside-calculator/"></iframe>]]></description></item><item><title>Design Patterns</title><link>https://pratyakshajha.me/design-patterns/</link><pubDate>Sun, 21 May 2023 20:43:23 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/design-patterns/</guid><description><![CDATA[<p>Design patterns are typical solutions to commonly occurring problems in software design. They are like pre-made blueprints that can be customized to solve a recurring design problem in any code.</p>
+<p>All patterns can be categorized by their intent, or purpose.</p>
+<h2 id="creational-patterns">Creational Patterns</h2>
+<p>This pattern provides ways to create object creation in a manner that increases flexibility and reuse of code.</p>
+<h3 id="factory-method">Factory Method</h3>
+<p>This pattern provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.</p>]]></description></item><item><title>Solid Design Principles</title><link>https://pratyakshajha.me/solid-design-principles/</link><pubDate>Sat, 06 May 2023 12:37:56 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/solid-design-principles/</guid><description><![CDATA[<p>SOLID is a set design principles in object-oriented context to make maintainable, testable and extendable software.</p>
+<h2 id="single-responsibility">Single Responsibility</h2>
+<p>A class should only have one responsibility. Furthermore, it should only have one reason to change.</p>
+<p>Benefits:</p>
+<ul>
+<li>Testing: A class with one responsibility will have far fewer test cases.</li>
+<li>Lower coupling: Less functionality in a single class will have fewer dependencies.</li>
+<li>Organization: Smaller, well-organized classes are easier to search than monolithic ones.</li>
+</ul>
+<h3 id="example">Example</h3>
+<h4 id="bad">Bad</h4>
+<p>A class representing a book:</p>]]></description></item><item><title>Selenium Cheat Sheet</title><link>https://pratyakshajha.me/selenium-cheat-sheet/</link><pubDate>Sun, 24 Apr 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/selenium-cheat-sheet/</guid><description><![CDATA[<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">This post assumes prior knowledge of python and selenium 4</div>
+        </div>
+    </div>
+<h2 id="installation">Installation</h2>
+<p>Selenium: <code>pip install selenium</code></p>
+<p>Download the drivers, make sure that your browser, selenium and driver versions are compatible with each other.</p>
+<ul>
+<li>Chrome: <a href="https://chromedriver.chromium.org/downloads" target="_blank" rel="noopener noreffer">https://chromedriver.chromium.org/downloads</a></li>
+<li>Firefox: <a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener noreffer">https://github.com/mozilla/geckodriver/releases</a></li>
+<li>Edge: <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank" rel="noopener noreffer">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a></li>
+</ul>
+<h2 id="instantiate-your-driver">Instantiate your driver</h2>
+<h3 id="chrome">Chrome</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/chromedriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.options</span> <span class="kn">import</span> <span class="n">Options</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## option to not show an open browser window</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&#34;--headless&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/chromedriver.exe&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="mozilla">Mozilla</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/geckodriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options-1">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.firefox.options</span> <span class="kn">import</span> <span class="n">Options</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># option for firefox.exe location, if firefox is not installed in default location</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">binary_location</span> <span class="o">=</span> <span class="s2">&#34;C:/.../firefox.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">set_preference</span><span class="p">(</span><span class="s2">&#34;browser.download.manager.showWhenStarting&#34;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">set_preference</span><span class="p">(</span><span class="s2">&#34;browser.download.dir&#34;</span><span class="p">,</span><span class="s2">&#34;/Data&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/geckodriver.exe&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="edge">Edge</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;C:/webdrivers/msedgedriver.exe&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="with-custom-options-2">With custom options</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.edge</span> <span class="kn">import</span> <span class="n">service</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">EdgeOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">use_chromium</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&#34;start-maximized&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># option for msegde.exe location, if edge is not installed in default location</span>
+</span></span><span class="line"><span class="cl"><span class="n">options</span><span class="o">.</span><span class="n">binary_location</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;C:/../msedge.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">service</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">Service</span><span class="p">(</span><span class="s2">&#34;C:/webdrivers/msedgedriver.exe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">service</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="open-a-website">Open a website</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://google.com&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="find-an-element">Find an element</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&#34;ID&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s2">&#34;NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&#34;XPATH&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">PARTIAL_LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;PARTIAL_TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&#34;TAG_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&#34;CLASS_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">&#34;CSS_SELECTOR&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="find-multiple-elements">Find multiple elements</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&#34;ID&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span> <span class="s2">&#34;NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">&#34;XPATH&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">PARTIAL_LINK_TEXT</span><span class="p">,</span> <span class="s2">&#34;PARTIAL_TEXT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&#34;TAG_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&#34;CLASS_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span> <span class="o">=</span> <span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span> <span class="s2">&#34;CSS_SELECTOR&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="get-information-from-element">Get information from element</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">text</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># get an attribute like href, class, value etc</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&#34;ATTRIBUTE&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># get property like text_length</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s2">&#34;PROPERTY&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># is element visible to user</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_displayed</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_enabled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">is_selected</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s2">&#34;/Screenshots/foo.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="interactions">Interactions</h2>
+<h3 id="button">Button</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">cick</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="text">Text</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&#34;lorem ipsum&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># press arrow key</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&#34;lorem ipsum&#34;</span><span class="p">,</span> <span class="n">Keys</span><span class="o">.</span><span class="n">ARROW_DOWN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">element</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>List of all keys is at: <a href="https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank" rel="noopener noreffer">https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys</a></p>]]></description></item><item><title>Git Cheat Sheet</title><link>https://pratyakshajha.me/git-cheat-sheet/</link><pubDate>Wed, 12 Jan 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/git-cheat-sheet/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/featured/git.png" referrerpolicy="no-referrer">
-            </div>Setup User name: git config --global user.name &quot;[firstname lastname]&quot; Email: git config --global user.email &quot;[valid-email]&quot; Color: git config --global color.ui auto Initialization and cloning Make your current folder a git repo: git init Clone a repo: git clone [url] Staging and commits Get status of staged, unstages and untracked files: git status Add files to staging: git add [file] Remove a file from staging: git reset [file] Remove a file from staging and remove all changes: git reset --hard [file] Differences in files that are modified but not staged: git diff Differences in files that are staged but not committed: git diff --staged Commit changes: git commit -m &quot;[message]&quot; Commit only specific portion of a file: git add -p [file] Note: Git will go into interactive mode and prompt options for actions on each hunk.]]></description></item><item><title>Covid Vaccine Availability Dashboard</title><link>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</link><pubDate>Sat, 15 May 2021 03:30:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</guid><description>From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into Cowin app to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode.</description></item></channel></rss>
+            </div><h2 id="setup">Setup</h2>
+<ul>
+<li>User name: <code>git config --global user.name &quot;[firstname lastname]&quot;</code></li>
+<li>Email: <code>git config --global user.email &quot;[valid-email]&quot;</code></li>
+<li>Color: <code>git config --global color.ui auto</code></li>
+</ul>
+<h2 id="initialization-and-cloning">Initialization and cloning</h2>
+<ul>
+<li>Make your current folder a git repo: <code>git init</code></li>
+<li>Clone a repo: <code>git clone [url]</code></li>
+</ul>
+<h2 id="staging-and-commits">Staging and commits</h2>
+<ul>
+<li>Get status of staged, unstages and untracked files: <code>git status</code></li>
+<li>Add files to staging: <code>git add [file]</code></li>
+<li>Remove a file from staging: <code>git reset [file]</code></li>
+<li>Remove a file from staging and remove all changes: <code>git reset --hard [file]</code></li>
+<li>Differences in files that are modified but not staged: <code>git diff</code></li>
+<li>Differences in files that are staged but not committed: <code>git diff --staged</code></li>
+<li>Commit changes: <code>git commit -m &quot;[message]&quot;</code></li>
+<li>Commit only specific portion of a file: <code>git add -p [file]</code> <br> Note: Git will go into interactive mode and prompt options for actions on each hunk.</li>
+<li>Add current staged changes to the previous commit: <code>git commit --amend</code> <br> Note: Avoid amending a commit after they&rsquo;ve been pushed.</li>
+<li>Undo all changes of the latest commit: <code>git revert HEAD</code></li>
+<li>Undo all changes of a specific commit: <code>git revert [commit-sha]</code></li>
+<li>Change a file but never commit it (hide from git): <code>git update-index --skip-worktree [file]</code> <br> Note: Used to avoid accidentally committing config files (for example DB credentials) that are modified for local setup.</li>
+<li>Undo previous command (unhide from git): <code>git update-index --no-skip-worktree [file]</code></li>
+</ul>
+<h2 id="branch-and-merge">Branch and merge</h2>
+<ul>
+<li>List all branches and highlight current branch: <code>git branch</code></li>
+<li>Switch to another branch: <code>git checkout [branch-name]</code></li>
+<li>Create a new branch and switch to it: <code>git checkout -b [branch name]</code></li>
+<li>Delete a branch: <code>git branch -d [branch-name]</code></li>
+<li>Merge another branch to current branch: <code>git merge [branch-name]</code></li>
+<li>Rebase the current branch to the top of master: <code>git rebase master</code></li>
+</ul>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>List all tags: <code>git tag</code></li>
+<li>Create a tag for current commit: <code>git tag [tag-name]</code></li>
+<li>Create a tag for specific commit: <code>git tag [tag-name] [commit-sha]</code></li>
+<li>Delete a tag: <code>git tag -d [tag-name]</code></li>
+</ul>
+<h2 id="inspect-changes">Inspect changes</h2>
+<ul>
+<li>Commit history of current branch: <code>git log</code></li>
+<li>Show commits that changed a file: <code>git log --follow [file]</code></li>
+<li>Show commit history as a graph: <code>git log --graph --oneline</code></li>
+</ul>
+<h2 id="interacting-with-remote-repo">Interacting with remote repo</h2>
+<ul>
+<li>Add a git URL as remote: <code>git remote add origin [url]</code></li>
+<li>Get all changes from remote branch: <code>git pull</code></li>
+<li>Send all local changes to remote branch: <code>git push</code></li>
+<li>Merge a remote branch to current: <code>git merge origin\[branch-name]</code></li>
+</ul>
+<h2 id="temporary-commits">Temporary commits</h2>
+<ul>
+<li>Save all changes: <code>git stash</code></li>
+<li>Restore changes from stash: <code>git stash pop</code></li>
+<li>Discard the top of stash: <code>git stash drop</code></li>
+</ul>]]></description></item><item><title>Covid Vaccine Availability Dashboard</title><link>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</link><pubDate>Sat, 15 May 2021 03:30:21 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/covid-india-vaccine-appointment-availability/</guid><description>&lt;p>From May 1st, the government of India has opened several vaccination centers for people aged between 18 to 45. The vaccines are scarce and logging into &lt;a href="https://www.cowin.gov.in" target="_blank" rel="noopener noreffer">Cowin app&lt;/a> to check status is cumbersome due to frequent timeouts. The government has also made a public API to access vaccine related information like finding availability and downloading vaccination certificates. Using this, I have made a dashboard that makes it easy to find vaccine availability by district or pincode.&lt;/p></description></item></channel></rss>

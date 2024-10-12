@@ -1,3 +1,64 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Git - Tag - Pratyaksha</title><link>https://pratyakshajha.me/tags/git/</link><description>Git - Tag - Pratyaksha</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>hello@pratyakshajha.me (Pratyaksha Jha)</managingEditor><webMaster>hello@pratyakshajha.me (Pratyaksha Jha)</webMaster><lastBuildDate>Wed, 12 Jan 2022 15:56:18 +0530</lastBuildDate><atom:link href="https://pratyakshajha.me/tags/git/" rel="self" type="application/rss+xml"/><item><title>Git Cheat Sheet</title><link>https://pratyakshajha.me/git-cheat-sheet/</link><pubDate>Wed, 12 Jan 2022 15:56:18 +0530</pubDate><author>Pratyaksha Jha</author><guid>https://pratyakshajha.me/git-cheat-sheet/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/featured/git.png" referrerpolicy="no-referrer">
-            </div>Setup User name: git config --global user.name &quot;[firstname lastname]&quot; Email: git config --global user.email &quot;[valid-email]&quot; Color: git config --global color.ui auto Initialization and cloning Make your current folder a git repo: git init Clone a repo: git clone [url] Staging and commits Get status of staged, unstages and untracked files: git status Add files to staging: git add [file] Remove a file from staging: git reset [file] Remove a file from staging and remove all changes: git reset --hard [file] Differences in files that are modified but not staged: git diff Differences in files that are staged but not committed: git diff --staged Commit changes: git commit -m &quot;[message]&quot; Commit only specific portion of a file: git add -p [file] Note: Git will go into interactive mode and prompt options for actions on each hunk.]]></description></item></channel></rss>
+            </div><h2 id="setup">Setup</h2>
+<ul>
+<li>User name: <code>git config --global user.name &quot;[firstname lastname]&quot;</code></li>
+<li>Email: <code>git config --global user.email &quot;[valid-email]&quot;</code></li>
+<li>Color: <code>git config --global color.ui auto</code></li>
+</ul>
+<h2 id="initialization-and-cloning">Initialization and cloning</h2>
+<ul>
+<li>Make your current folder a git repo: <code>git init</code></li>
+<li>Clone a repo: <code>git clone [url]</code></li>
+</ul>
+<h2 id="staging-and-commits">Staging and commits</h2>
+<ul>
+<li>Get status of staged, unstages and untracked files: <code>git status</code></li>
+<li>Add files to staging: <code>git add [file]</code></li>
+<li>Remove a file from staging: <code>git reset [file]</code></li>
+<li>Remove a file from staging and remove all changes: <code>git reset --hard [file]</code></li>
+<li>Differences in files that are modified but not staged: <code>git diff</code></li>
+<li>Differences in files that are staged but not committed: <code>git diff --staged</code></li>
+<li>Commit changes: <code>git commit -m &quot;[message]&quot;</code></li>
+<li>Commit only specific portion of a file: <code>git add -p [file]</code> <br> Note: Git will go into interactive mode and prompt options for actions on each hunk.</li>
+<li>Add current staged changes to the previous commit: <code>git commit --amend</code> <br> Note: Avoid amending a commit after they&rsquo;ve been pushed.</li>
+<li>Undo all changes of the latest commit: <code>git revert HEAD</code></li>
+<li>Undo all changes of a specific commit: <code>git revert [commit-sha]</code></li>
+<li>Change a file but never commit it (hide from git): <code>git update-index --skip-worktree [file]</code> <br> Note: Used to avoid accidentally committing config files (for example DB credentials) that are modified for local setup.</li>
+<li>Undo previous command (unhide from git): <code>git update-index --no-skip-worktree [file]</code></li>
+</ul>
+<h2 id="branch-and-merge">Branch and merge</h2>
+<ul>
+<li>List all branches and highlight current branch: <code>git branch</code></li>
+<li>Switch to another branch: <code>git checkout [branch-name]</code></li>
+<li>Create a new branch and switch to it: <code>git checkout -b [branch name]</code></li>
+<li>Delete a branch: <code>git branch -d [branch-name]</code></li>
+<li>Merge another branch to current branch: <code>git merge [branch-name]</code></li>
+<li>Rebase the current branch to the top of master: <code>git rebase master</code></li>
+</ul>
+<h2 id="tags">Tags</h2>
+<ul>
+<li>List all tags: <code>git tag</code></li>
+<li>Create a tag for current commit: <code>git tag [tag-name]</code></li>
+<li>Create a tag for specific commit: <code>git tag [tag-name] [commit-sha]</code></li>
+<li>Delete a tag: <code>git tag -d [tag-name]</code></li>
+</ul>
+<h2 id="inspect-changes">Inspect changes</h2>
+<ul>
+<li>Commit history of current branch: <code>git log</code></li>
+<li>Show commits that changed a file: <code>git log --follow [file]</code></li>
+<li>Show commit history as a graph: <code>git log --graph --oneline</code></li>
+</ul>
+<h2 id="interacting-with-remote-repo">Interacting with remote repo</h2>
+<ul>
+<li>Add a git URL as remote: <code>git remote add origin [url]</code></li>
+<li>Get all changes from remote branch: <code>git pull</code></li>
+<li>Send all local changes to remote branch: <code>git push</code></li>
+<li>Merge a remote branch to current: <code>git merge origin\[branch-name]</code></li>
+</ul>
+<h2 id="temporary-commits">Temporary commits</h2>
+<ul>
+<li>Save all changes: <code>git stash</code></li>
+<li>Restore changes from stash: <code>git stash pop</code></li>
+<li>Discard the top of stash: <code>git stash drop</code></li>
+</ul>]]></description></item></channel></rss>
